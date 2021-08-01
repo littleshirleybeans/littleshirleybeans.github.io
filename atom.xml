@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Xin&#39;s Blog</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-08-01T10:41:38.891Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Xin</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于选择器优先级和继承的概念</title>
+    <link href="http://example.com/2021/07/15/CSS1/"/>
+    <id>http://example.com/2021/07/15/CSS1/</id>
+    <published>2021-07-14T16:00:00.000Z</published>
+    <updated>2021-08-01T10:41:38.891Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在读《深入解析CSS》。</p><p>读到第2章的时候发现自己对于选择器优先级的概念和继承的概念混为一谈了。</p><p>借用第2章“自定义属性”的例子，利用自定义属性为两块面板设置不同的颜色。我的困惑出现在给第二个面板设置不同字体颜色和背景颜色后，第二个面板原来的字体颜色和背景颜色都被新颜色覆盖。</p><p>当时的想法是：<code>:root</code>是伪类选择器，优先级相当于类，<code>.dark</code>是类选择器，二者优先级相等，然后考虑代码顺序，但将<code>:root</code>声明块移至<code>.dark</code>下面，发现效果还是和之前一样。为了进一步明确我的困惑，在外层又加了一个<code>id=&quot;test&quot;</code>的div元素，定义了自定义属性，设置不同的颜色，此时<code>#test</code>的优先级高于<code>.dark</code>，总该会出现<code>#test</code>的效果了吧，结果却还是和之前一样。</p><p>上面的”折腾“忽略了一个很重要的前提：<strong>上述的选择器并非作用于同一个元素</strong>。因此考虑它们的优先级是毫无意义的。</p><p>HTML部分：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;test&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Single-origin<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;body&quot;</span>&gt;</span></span><br><span class="line">                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam cumque deserunt omnis sed autem molestias et reprehenderit voluptatum odit voluptas fugiat reiciendis, corrupti nihil maiores. Pariatur laboriosam doloribus aspernatur. Accusamus!</span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">aside</span> <span class="attr">class</span>=<span class="string">&quot;dark&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Single-origin<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;body&quot;</span>&gt;</span></span><br><span class="line">                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sunt perspiciatis fugit. Fuga nostrum ea error, autem officiis dolores tenetur necessitatibus doloribus mollitia qui veritatis cumque, saepe impedit inventore ab?</span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure><p>CSS部分：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    --<span class="selector-tag">main</span>-bg: <span class="number">#fff</span>;</span><br><span class="line">    --<span class="selector-tag">main</span>-<span class="attribute">color</span>: <span class="number">#000</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#test</span> &#123;</span><br><span class="line">    --<span class="selector-tag">main</span>-bg: <span class="number">#365</span>;</span><br><span class="line">    --<span class="selector-tag">main</span>-<span class="attribute">color</span>: <span class="number">#000</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.panel</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">1rem</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">1em</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#999</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: .<span class="number">5em</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">var</span>(--main-bg);</span><br><span class="line">    <span class="attribute">color</span>: <span class="built_in">var</span>(--main-color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.panel</span> &gt; <span class="selector-tag">h2</span> &#123;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: .<span class="number">8em</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">    <span class="attribute">text-transform</span>: uppercase;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.dark</span> &#123;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">2em</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">1em</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#999</span>;</span><br><span class="line">    --<span class="selector-tag">main</span>-bg: <span class="number">#333</span>;</span><br><span class="line">    --<span class="selector-tag">main</span>-<span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>选择器优先级和继承，最终出现的效果可能都会导致原来的样式被覆盖，但两者是不同的概念，目的不同，手段不同。</p><p>选择器优先级本质上是用来解决声明冲突的规则。因此在考虑选择器优先级的时候，首先看这两个选择器是否都（至少）作用于同一个元素，因为只有作用于同一个元素才有可能发生声明冲突，如果作用于同一个元素，那么就根据优先级规则预测元素的效果；继承本质上是添加样式的一种方式，与选择器的优先级和声明块的顺序没有直接关系。如果一个元素的某个属性（可继承的属性）没有层叠值，则会继承父元素的值，将属性加到body上会在整个网页上生效，而将属性加到特定元素上，则只会被它的后代元素继承，并且继承属性会顺序传递给后代元素，直到它被层叠值覆盖。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;最近在读《深入解析CSS》。&lt;/p&gt;
+&lt;p&gt;读到第2章的时候发现自己对于选择器优先级的概念和继承的概念混为一谈了。&lt;/p&gt;
+&lt;p&gt;借用第2章</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="CSS" scheme="http://example.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Objects</title>
+    <link href="http://example.com/2021/07/07/js-book1-note2/"/>
+    <id>http://example.com/2021/07/07/js-book1-note2/</id>
+    <published>2021-07-07T03:54:08.000Z</published>
+    <updated>2021-07-07T03:56:25.307Z</updated>
+    
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React Day01</title>
+    <link href="http://example.com/2021/07/07/react-video1-day1/"/>
+    <id>http://example.com/2021/07/07/react-video1-day1/</id>
+    <published>2021-07-07T03:17:55.000Z</published>
+    <updated>2021-07-07T03:21:42.025Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://i.loli.net/2021/07/07/Q97JDgOHfuidP6o.png" alt="Two Kinds of Applications.PNG"></p><p><img src="https://i.loli.net/2021/07/07/xMVYzslZOneuW6H.png" alt="Exports_Imports.PNG"></p><p><img src="https://i.loli.net/2021/07/07/Rjle5WL6yJX83ga.png" alt="Exports_Imports2.PNG"></p><p><img src="https://i.loli.net/2021/07/07/d2B5LPjYk3NA8UZ.png" alt="classes.PNG"></p><p><img src="https://i.loli.net/2021/07/07/hnjLu21D8QcOmiJ.png" alt="Spread _ Rest Operators.PNG"></p><p><img src="https://i.loli.net/2021/07/07/B2e4tdW8kDch6vT.png" alt="Destructuring.PNG"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/07/07/Q97JDgOHfuidP6o.png&quot; alt=&quot;Two Kinds of Applications.PNG&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/202</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="react" scheme="http://example.com/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Operator</title>
+    <link href="http://example.com/2021/07/07/js-book1-note1/"/>
+    <id>http://example.com/2021/07/07/js-book1-note1/</id>
+    <published>2021-07-06T16:00:00.000Z</published>
+    <updated>2021-07-07T02:00:39.051Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.<span class="built_in">log</span>(<span class="operator">!</span><span class="literal">false</span>);  <span class="operator">/</span><span class="operator">/</span><span class="literal">true</span></span><br><span class="line">console.<span class="built_in">log</span>(<span class="operator">!</span>&quot;blue&quot;);  <span class="operator">/</span><span class="operator">/</span><span class="literal">false</span></span><br><span class="line">console.<span class="built_in">log</span>(<span class="operator">!</span><span class="number">0</span>);  <span class="operator">/</span><span class="operator">/</span><span class="literal">true</span></span><br><span class="line">console.<span class="built_in">log</span>(<span class="operator">!</span>NaN);  <span class="operator">/</span><span class="operator">/</span><span class="literal">true</span></span><br><span class="line">console.<span class="built_in">log</span>(<span class="operator">!</span>&quot;&quot;);  <span class="operator">/</span><span class="operator">/</span><span class="literal">true</span></span><br><span class="line">console.<span class="built_in">log</span>(<span class="operator">!</span><span class="number">12345</span>);  <span class="operator">/</span><span class="operator">/</span><span class="literal">false</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Boolean&quot;&gt;&lt;a href=&quot;#Boolean&quot; class=&quot;headerlink&quot; title=&quot;Boolean&quot;&gt;&lt;/a&gt;Boolean&lt;/h1&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;g</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://example.com/2021/07/06/test/"/>
+    <id>http://example.com/2021/07/06/test/</id>
+    <published>2021-07-05T16:00:00.000Z</published>
+    <updated>2021-07-07T03:19:00.083Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://i.loli.net/2021/07/07/ypBP9eSb8mwcltW.jpg" alt="about.jpg"></p><p>Just for test!</p><p><a href="https://www.notion.so/The-Plan-of-Summer-e693bfbb3e734b7bbb8152a6bce08a66">hhh</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/07/07/ypBP9eSb8mwcltW.jpg&quot; alt=&quot;about.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Just for test!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.notion.so</summary>
+      
+    
+    
+    
+    <category term="111" scheme="http://example.com/categories/111/"/>
+    
+    
+    <category term="test" scheme="http://example.com/tags/test/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2021/03/31/hello-world/"/>
+    <id>http://example.com/2021/03/31/hello-world/</id>
+    <published>2021-03-31T06:25:08.944Z</published>
+    <updated>2021-06-01T08:21:27.260Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">0</span>;</span><br></pre></td></tr></table></figure><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.outer</span> &#123;</span><br><span class="line">      <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.inner</span> &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">      <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="attribute">top</span>: <span class="built_in">calc</span>(<span class="number">50%</span> - <span class="number">100px</span>);</span><br><span class="line">      <span class="attribute">left</span>: <span class="built_in">calc</span>(<span class="number">50%</span> - <span class="number">100px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>wd</p></blockquote><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dsdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    <category term="111" scheme="http://example.com/categories/111/"/>
+    
+    
+    <category term="test" scheme="http://example.com/tags/test/"/>
+    
+  </entry>
+  
+</feed>
