@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Xin" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      20210917 - findByIdAndUpdate does not run validations 
+      
+      
+      |
+    
+     Xin&#39;s Blog
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.jpg">
+    <link rel="icon" href="/images/favicon.jpg">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/color-scheme.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
+<link rel="stylesheet" href="/css/highlight.css">
+<link rel="stylesheet" href="/css/comments.css">
+
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Xin's Blog" type="application/atom+xml">
+</head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/avatar.jpg" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">Xin</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">20210917 - findByIdAndUpdate does not run validations</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="Update time"></i>
+          2021-09-17 00:00:00
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags" title="Tags"></i>
+                
+                <span class="span--tag">
+                  <a href="/tags/React/" title="React">
+                    <b>#</b> React
+                  </a>
+                </span>
+                
+                <span class="span--tag">
+                  <a href="/tags/Solved/" title="Solved">
+                    <b>#</b> Solved
+                  </a>
+                </span>
+                
+                <span class="span--tag">
+                  <a href="/tags/MongoDB/" title="MongoDB">
+                    <b>#</b> MongoDB
+                  </a>
+                </span>
+                
+                <span class="span--tag">
+                  <a href="/tags/Mongoose/" title="Mongoose">
+                    <b>#</b> Mongoose
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <p>在创建Schema时应用了Validations，设置了required、minlength、unique等等限制。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> personSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</span><br><span class="line">  name: &#123;</span><br><span class="line">    type: <span class="built_in">String</span>,</span><br><span class="line">    required: [<span class="literal">true</span>, <span class="string">&#x27;The name is required&#x27;</span>],</span><br><span class="line">    unique: <span class="literal">true</span>,</span><br><span class="line">    minlength: [<span class="number">3</span>, <span class="string">&#x27;The name has to be at least three characters long&#x27;</span>]</span><br><span class="line">  &#125;,</span><br><span class="line">  number: &#123;</span><br><span class="line">    type: <span class="built_in">String</span>,</span><br><span class="line">    required: [<span class="literal">true</span>, <span class="string">&#x27;The phone number is required&#x27;</span>],</span><br><span class="line">    minlength: [<span class="number">8</span>, <span class="string">&#x27;The phone number must have at least 8 digits&#x27;</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">personSchema.plugin(uniqueValidator)</span><br></pre></td></tr></table></figure>
+
+<p>在POST请求也就是创建新联系人的时候的确有用（大概是用了save()的缘故？）。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">app.post(<span class="string">&#x27;/api/persons&#x27;</span>, <span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> body = req.body</span><br><span class="line">  <span class="built_in">console</span>.log(body)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> person = <span class="keyword">new</span> Person(&#123;</span><br><span class="line">    name: body.name,</span><br><span class="line">    number: body.number,</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="built_in">console</span>.log(person)</span><br><span class="line"></span><br><span class="line">  person.**save()**</span><br><span class="line">    .then(<span class="function"><span class="params">savedPerson</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(savedPerson)</span><br><span class="line">      <span class="keyword">return</span> savedPerson.toJSON()</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">savedAndFormattedPerson</span> =&gt;</span> &#123;</span><br><span class="line">      res.json(savedAndFormattedPerson)</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function"><span class="params">error</span> =&gt;</span> next(error))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>但如果要修改（PUT请求）联系人信息，Validations就无法生效了。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">app.put(<span class="string">&#x27;/api/persons/:id&#x27;</span>, <span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> body = req.body</span><br><span class="line">  <span class="keyword">const</span> person = &#123;</span><br><span class="line">    name: body.name,</span><br><span class="line">    number: body.number,</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Person.findByIdAndUpdate(req.params.id, person, &#123;<span class="attr">new</span>: <span class="literal">true</span>&#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">updatedPerson</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (updatedPerson) &#123;</span><br><span class="line">        res.json(updatedPerson)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        res.status(<span class="number">404</span>).end()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function"><span class="params">error</span> =&gt;</span> next(error))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>查了Mongoose文档：</p>
+<blockquote>
+<p>runValidators: if true, runs update validators on this command. Update validators validate the update operation against the model’s schema.</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://mongoosejs.com/docs/api/model.html#model_Model.findByIdAndUpdate">Mongoose v6.0.6:</a></p>
+<p>以及相关问答：</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/31794558/mongoose-findbyidandupdate-not-running-validations-on-subdocuments">Mongoose findByIdAndUpdate not running validations on subdocuments</a></p>
+<blockquote>
+<p>According to the documentation, validators seems to work only for update() and findOneAndUpdate() if runValidators is set to true.</p>
+</blockquote>
+<p>但其实文档里也说过findByAndUpdate也可以支持有限的validation的。。。（可能这个回答时间比较久远了，现在好像是可行的）</p>
+<p>见下：</p>
+<h1 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h1><p><code>findOneAndX</code> and <code>findByIdAndX</code> functions support limited validation that you can enable by setting the <code>runValidators</code> option.</p>
+<p>If you need full-fledged validation, use the traditional approach of first retrieving the document.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> doc = <span class="keyword">await</span> Model.findById(id);</span><br><span class="line">doc.name = <span class="string">&#x27;jason bourne&#x27;</span>;</span><br><span class="line"><span class="keyword">await</span> doc.save();</span><br></pre></td></tr></table></figure>
+
+<p>按照文档试了一下好像确实可以</p>
+<p>修改后的PUT代码部分</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">app.put(<span class="string">&#x27;/api/persons/:id&#x27;</span>, <span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> body = req.body</span><br><span class="line">  <span class="keyword">const</span> person = &#123;</span><br><span class="line">    name: body.name,</span><br><span class="line">    number: body.number,</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Person.findByIdAndUpdate(req.params.id, person, **&#123;<span class="attr">new</span>: <span class="literal">true</span>, <span class="attr">runValidators</span>: <span class="literal">true</span>&#125;**)</span><br><span class="line">    .then(<span class="function"><span class="params">updatedPerson</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (updatedPerson) &#123;</span><br><span class="line">        res.json(updatedPerson)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        res.status(<span class="number">404</span>).end()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function"><span class="params">error</span> =&gt;</span> next(error))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bf63b330-67fe-4fcc-a6b8-ab75f5993951/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T111549Z&X-Amz-Expires=86400&X-Amz-Signature=5a795b9ce00d54a601d5579a01fe9bbfb23826e168c7fda2eadf6e16e8f565de&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p>
+<p>前端也作了修改，加了if-else判断error的类型后再输出报错的message，也不知道在异步方法下加判断会不会有坑，但功能上是实现了的。相关代码如下：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">personService</span><br><span class="line">       .update(samePerson.id, changedPerson)</span><br><span class="line">       .then(<span class="function"><span class="params">returnedPerson</span> =&gt;</span> &#123;</span><br><span class="line">         <span class="built_in">console</span>.log(returnedPerson)</span><br><span class="line">         setPersons(persons.map(<span class="function"><span class="params">person</span> =&gt;</span> person.id === samePerson.id ? returnedPerson : person))</span><br><span class="line">         setNewName(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">         setNewNumber(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">         setError(<span class="literal">false</span>)</span><br><span class="line">         setMessage(</span><br><span class="line">           <span class="string">`Updated <span class="subst">$&#123;returnedPerson.name&#125;</span>&#x27;s number`</span></span><br><span class="line">         )</span><br><span class="line">         <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">           setMessage(<span class="literal">null</span>)</span><br><span class="line">         &#125;, <span class="number">5000</span>)</span><br><span class="line">       &#125;)</span><br><span class="line">       .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">         <span class="built_in">console</span>.log(error.response.data.error)</span><br><span class="line">         **<span class="keyword">if</span> (error.response.data.error) &#123;</span><br><span class="line">           setMessage(</span><br><span class="line">             <span class="string">`<span class="subst">$&#123;error.response.data.error&#125;</span>`</span></span><br><span class="line">           )</span><br><span class="line">           <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">             setMessage(<span class="literal">null</span>)</span><br><span class="line">           &#125;, <span class="number">5000</span>)</span><br><span class="line">           setError(<span class="literal">true</span>)</span><br><span class="line">           setNewName(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">           setNewNumber(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">         &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           setMessage(</span><br><span class="line">             <span class="string">`Information of <span class="subst">$&#123;samePerson.name&#125;</span> has already been removed from server`</span></span><br><span class="line">           )</span><br><span class="line">           <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">             setMessage(<span class="literal">null</span>)</span><br><span class="line">           &#125;, <span class="number">5000</span>);</span><br><span class="line">           setPersons(persons.filter(<span class="function"><span class="params">person</span> =&gt;</span> person.name !== newName))</span><br><span class="line">           setNewName(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">           setNewNumber(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">           setError(<span class="literal">true</span>)</span><br><span class="line">         &#125;**</span><br><span class="line">       &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>降低冗余后：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> samePerson = persons.find(<span class="function"><span class="params">person</span> =&gt;</span> person.name === newName)</span><br><span class="line">      <span class="keyword">const</span> changedPerson = &#123; ...samePerson, <span class="attr">number</span>: newNumber &#125;</span><br><span class="line"></span><br><span class="line">      personService</span><br><span class="line">        .update(samePerson.id, changedPerson)</span><br><span class="line">        .then(<span class="function"><span class="params">returnedPerson</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(returnedPerson)</span><br><span class="line">          setPersons(persons.map(<span class="function"><span class="params">person</span> =&gt;</span> person.id === samePerson.id ? returnedPerson : person))</span><br><span class="line">          setNewName(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">          setNewNumber(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">          setError(<span class="literal">false</span>)</span><br><span class="line">          setMessage(</span><br><span class="line">            <span class="string">`Updated <span class="subst">$&#123;returnedPerson.name&#125;</span>&#x27;s number`</span></span><br><span class="line">          )</span><br><span class="line">          <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            setMessage(<span class="literal">null</span>)</span><br><span class="line">          &#125;, <span class="number">5000</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">        .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// console.log(error.response.data.error)</span></span><br><span class="line">          **<span class="keyword">if</span> (error.response.data.error) &#123;</span><br><span class="line">            setMessage(</span><br><span class="line">              <span class="string">`<span class="subst">$&#123;error.response.data.error&#125;</span>`</span></span><br><span class="line">            )</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            setMessage(</span><br><span class="line">              <span class="string">`Information of <span class="subst">$&#123;samePerson.name&#125;</span> has already been removed from server`</span></span><br><span class="line">            )</span><br><span class="line">            setPersons(persons.filter(<span class="function"><span class="params">person</span> =&gt;</span> person.name !== newName))</span><br><span class="line">          &#125;</span><br><span class="line">          </span><br><span class="line">          <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            setMessage(<span class="literal">null</span>)</span><br><span class="line">          &#125;, <span class="number">5000</span>)</span><br><span class="line">          setError(<span class="literal">true</span>)</span><br><span class="line">          setNewName(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">          setNewNumber(<span class="string">&#x27;&#x27;</span>)**</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3611b493-696b-4f8a-a2d0-91a55f7d5950/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T111619Z&X-Amz-Expires=86400&X-Amz-Signature=c98beab3d2f076e08d0c5b1eb657f617d327aa5db3501b42c142ac5d60aa5b64&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2021/09/16/20210916%20-%20JSON/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="Update time"></i>
+              2021-09-17 00:00:00
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags" title="Tags"></i>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/React/" title="React">
+                        <b>#</b> React
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/Solved/" title="Solved">
+                        <b>#</b> Solved
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/MongoDB/" title="MongoDB">
+                        <b>#</b> MongoDB
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/Mongoose/" title="Mongoose">
+                        <b>#</b> Mongoose
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2021/09/17/20210917%20-%20Assign%20object%20to%20a%20variable%20before%20exporting%20as%20module%20default%20importno-anonymous-default-export/" target="_self">
+                <span>Next</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Note"><span class="toc-text">Note:</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+  </div>
+
+
+        <div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/littleshirleybeans">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="email" href="">
+            <i class="iconfont icon-envelope"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="facebook" href="">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="twitter" href="">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="rss" href="/atom.xml">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/littleshirleybeans">Copyright © Xin 2022</a>
+        
+    </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="Search...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+      </div>
+    </div>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
