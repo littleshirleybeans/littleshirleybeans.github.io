@@ -166,7 +166,7 @@ MathJax = {
 <p>…</p>
 <p>step 1: Create a new cluster</p>
 <p>step 2: Select service + region</p>
-<p>I tried to save data to mongodb. After double checking the password, the IP whitelist and that the connection string was correct, I still got these errors even if I succeed in creating collections but unfortunately no data was saved to it. </p>
+<p>I tried to save data to mongodb. After double checking the password, the IP whitelist and that the connection string was correct, I still got these errors even if I succeeded in creating collections but unfortunately no data was saved to it. </p>
 <p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/34a0a13e-3487-4825-9e68-021faaf274ca/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T091011Z&X-Amz-Expires=86400&X-Amz-Signature=4aab943ba714c90685f20365eb390ddba54866f506d9a79683096b0199492f11&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p>
 <p>save section:</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">note.save().then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;note saved!&#x27;</span>)</span><br><span class="line">  mongoose.connection.close()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
