@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-02-22T11:55:33.629Z</updated>
+  <updated>2022-02-24T08:33:49.440Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,143 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>20211222 - React Router doesn’t work after deploying on Heroku</title>
+    <link href="http://example.com/2021/12/22/20211222%20-%20React%20Router%20doesn%E2%80%99t%20work%20after%20deploying%20on%20Heroku/"/>
+    <id>http://example.com/2021/12/22/20211222%20-%20React%20Router%20doesn%E2%80%99t%20work%20after%20deploying%20on%20Heroku/</id>
+    <published>2021-12-21T16:00:00.000Z</published>
+    <updated>2022-02-24T08:33:49.440Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h1><p><a href="https://stackoverflow.com/questions/41772411/react-routing-works-in-local-machine-but-not-heroku">React Routing works in local machine but not Heroku</a></p><p><a href="https://stackoverflow.com/questions/55102453/how-to-use-react-route-on-heroku">How to use react route on heroku?</a></p><p><a href="https://medium.com/jeremy-gottfrieds-tech-blog/tutorial-how-to-deploy-a-production-react-app-to-heroku-c4831dfcfa08">Tutorial: how to deploy a production React app to Heroku</a></p><p><a href="https://stackoverflow.com/questions/44723509/react-routing-works-in-locally-but-not-heroku">React Routing works in locally but not Heroku</a></p><p><a href="https://stackoverflow.com/questions/52852877/static-json-not-working-for-reactjs-routes-and-heroku">static.json not working for ReactJS routes and Heroku</a></p><p><a href="https://stackoverflow.com/questions/51866714/react-router-routes-dont-work-when-deployed-to-heroku/51867087">React Router Routes Don’t work when deployed to Heroku</a></p><p><a href="https://stackoverflow.com/questions/42684809/react-router-vs-react-router-dom-when-to-use-one-or-the-other">react-router vs react-router-dom, when to use one or the other?</a></p><p><a href="https://stackoverflow.com/questions/64838587/how-to-properly-use-usehistory-from-react-router-dom">How to properly use useHistory () from react-router-dom?</a></p><p><a href="https://stackoverflow.com/questions/53539314/what-is-withrouter-for-in-react-router-dom">What is withRouter for in react-router-dom?</a></p><p><a href="https://stackoverflow.com/questions/64295886/react-router-doesnt-seen-to-work-on-production-with-heroku">React router doesn’t seen to work on production with heroku</a></p><p><a href="https://stackoverflow.com/questions/57736727/after-heroku-deployment-it-looks-like-cant-find-my-react-app-files-get-404">After heroku deployment, it looks like can’t find my react app files: GET / 404</a></p><p>An explanation of why router doesn’t work after deployed on Heroku</p><p><a href="https://www.reddit.com/r/reactjs/comments/apk207/react_router_urls_not_working_in_heroku/">React router urls not working in heroku?</a></p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/775489c8-00da-4057-8e0f-07df929a1035/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T083135Z&X-Amz-Expires=86400&X-Amz-Signature=a6b12dc2380cae4e38139f0adf82f651dbd534276cc1b4f24dde6f9681aa1404&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p><p><a href="https://www.reddit.com/r/reactjs/comments/apk207/react_router_urls_not_working_in_heroku/egbgse9/">soggypizza1’s comment from discussion “React router urls not working in heroku?”</a></p><p><a href="https://brandoncantello.medium.com/using-history-to-navigate-your-react-app-from-outside-a-component-40ea74ba4402">Using ‘history’ to navigate your React app from outside a component</a></p><p>终于！！！！BrowserRouter换成HashRouter可以了！！！但是HashRouter似乎适合没有backend的application</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/cbb5a6d8-0fbe-4447-9b31-2590cb921e24/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T083231Z&X-Amz-Expires=86400&X-Amz-Signature=57ee4cb0d9029821f8af15163779c451873d40bef73fdfb67ef17ab6e1cfc941&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p><p><a href="https://stackoverflow.com/questions/65676650/react-router-working-locally-but-not-deployed-on-heroku">React Router working locally but not deployed on heroku</a></p><p><a href="https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually">React-router urls don’t work when refreshing or writing manually</a></p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1011ba77-af2e-4c61-a865-59e2c464c5bd/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T083327Z&X-Amz-Expires=86400&X-Amz-Signature=552119f9f10c0eaf47b95e4ad047f5d2f363236aea5dece75b142bb4638ed1ce&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;相关链接&quot;&gt;&lt;a href=&quot;#相关链接&quot; class=&quot;headerlink&quot; title=&quot;相关链接&quot;&gt;&lt;/a&gt;相关链接&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/41772411/react-ro</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="Half-solved" scheme="http://example.com/tags/Half-solved/"/>
+    
+    <category term="Heroku" scheme="http://example.com/tags/Heroku/"/>
+    
+    <category term="React router" scheme="http://example.com/tags/React-router/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20211216 - e.target.file[0]</title>
+    <link href="http://example.com/2021/12/16/20211216%20-%20e.target.file[0]/"/>
+    <id>http://example.com/2021/12/16/20211216%20-%20e.target.file[0]/</id>
+    <published>2021-12-15T16:00:00.000Z</published>
+    <updated>2022-02-24T08:27:09.107Z</updated>
+    
+    <content type="html"><![CDATA[<p>e.target.file → filelist:</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e69c246b-4a3f-4b40-bf14-ff645436fedc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T082635Z&X-Amz-Expires=86400&X-Amz-Signature=3e9f787285f4dda9d8bc6a6048f2472e8085413c01e3b0d40ccf411931882d2a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p>e.target.file[0]:</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2551d0d5-81a3-4b5e-98c9-454bba20786c/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T082647Z&X-Amz-Expires=86400&X-Amz-Signature=c4b54bef4307ecf289e6923d645235c6f55c386c7132dff82f6a29df314e4a28&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;e.target.file → filelist:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e69c246b-4a3f-4b40-bf14-ff645436fe</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
+    
+    <category term="DOM" scheme="http://example.com/tags/DOM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20211215 - &#39;Tag嵌套：`p` 不能在 `div` 里面，`div` 也不能在 `p` 里面&#39;</title>
+    <link href="http://example.com/2021/12/15/20211215%20-%20Tag%E5%B5%8C%E5%A5%97%EF%BC%9A%60p%60%20%E4%B8%8D%E8%83%BD%E5%9C%A8%20%60div%60%20%E9%87%8C%E9%9D%A2%EF%BC%8C%60div%60%20%E4%B9%9F%E4%B8%8D%E8%83%BD%E5%9C%A8%20%60p%60%20%E9%87%8C%E9%9D%A2/"/>
+    <id>http://example.com/2021/12/15/20211215%20-%20Tag%E5%B5%8C%E5%A5%97%EF%BC%9A%60p%60%20%E4%B8%8D%E8%83%BD%E5%9C%A8%20%60div%60%20%E9%87%8C%E9%9D%A2%EF%BC%8C%60div%60%20%E4%B9%9F%E4%B8%8D%E8%83%BD%E5%9C%A8%20%60p%60%20%E9%87%8C%E9%9D%A2/</id>
+    <published>2021-12-14T16:00:00.000Z</published>
+    <updated>2022-02-24T08:36:22.391Z</updated>
+    
+    <content type="html"><![CDATA[<p>因为desc中的内容被解析为html之后，有些会出现<code>&lt;p&gt;</code>标签</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e4291401-b838-4437-a3e5-4106bacb9a01/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T082057Z&X-Amz-Expires=86400&X-Amz-Signature=9765589f8837648ca56b87fd63f5af751d576175e2d0193b85901d2bc99d69c9&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p><h1 id="Solution-temporary"><a href="#Solution-temporary" class="headerlink" title="Solution (temporary)"></a>Solution (temporary)</h1><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Typography variant=<span class="string">&#x27;body2&#x27;</span> component=<span class="string">&#x27;h6&#x27;</span>&gt;</span><br><span class="line">     &#123;ReactHtmlParser(selectedPod.description)&#125;</span><br><span class="line">&lt;/Typography&gt;</span><br></pre></td></tr></table></figure><ul><li>实际dom中为h6，变体为p</li><li>Typography默认的component是div。</li></ul><p><a href="https://juejin.cn/post/6861879319829053454">p 标签里面不能嵌套 div 标签 - 掘金</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;因为desc中的内容被解析为html之后，有些会出现&lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;标签&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e4291401-</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="Half-solved" scheme="http://example.com/tags/Half-solved/"/>
+    
+    <category term="CSS" scheme="http://example.com/tags/CSS/"/>
+    
+    <category term="Material UI" scheme="http://example.com/tags/Material-UI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20211115 - A component is changing an uncontrolled Autocomplete to be controlled</title>
+    <link href="http://example.com/2021/11/15/20211115%20-%20A%20component%20is%20changing%20an%20uncontrolled%20Autocomplete%20to%20be%20controlled/"/>
+    <id>http://example.com/2021/11/15/20211115%20-%20A%20component%20is%20changing%20an%20uncontrolled%20Autocomplete%20to%20be%20controlled/</id>
+    <published>2021-11-14T16:00:00.000Z</published>
+    <updated>2022-02-24T07:58:10.138Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/829de34a-0bfc-4f05-a4c7-91ff0ec837ed/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T075658Z&X-Amz-Expires=86400&X-Amz-Signature=f32258f76fb60dc0c8fba5b5763d8734824d8030167c402b058337727a94d170&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p><p>autocomplete 有两个独立的值，value 和 inputValue，各自都需要state来更新</p><p>而且注意这里 autocomplete 的value的一个object，所以value的state初始值也应该是一个object。否则inputValue 会变成 undefined</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f4c9ba83-8d5b-459a-9f87-93d3f3e17b3a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T075736Z&X-Amz-Expires=86400&X-Amz-Signature=365a3a8b06398b9dd1f300c01de796de5aaee8ebff6a073f2b55733d6a3583f0&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> TextField <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/TextField&#x27;</span></span><br><span class="line"><span class="keyword">import</span> Autocomplete <span class="keyword">from</span> <span class="string">&#x27;@material-ui/lab/Autocomplete&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> options = [<span class="string">&#x27;Option 1&#x27;</span>, <span class="string">&#x27;Option 2&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">AutocompleteLab</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [value, setValue] = React.**useState(options[<span class="number">0</span>])**</span><br><span class="line">  <span class="keyword">const</span> [inputValue, setInputValue] = React.useState(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;div&gt;&#123;<span class="string">`value: <span class="subst">$&#123;value !== <span class="literal">null</span> ? <span class="string">`&#x27;<span class="subst">$&#123;value&#125;</span>&#x27;`</span> : <span class="string">&#x27;null&#x27;</span>&#125;</span>`</span>&#125;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;&#123;<span class="string">`inputValue: &#x27;<span class="subst">$&#123;inputValue&#125;</span>&#x27;`</span>&#125;&lt;/div&gt;</span><br><span class="line">      &lt;br /&gt;</span><br><span class="line">      &lt;Autocomplete</span><br><span class="line">        value=&#123;value&#125;</span><br><span class="line">        onChange=&#123;<span class="function">(<span class="params">_, newValue</span>) =&gt;</span> &#123;</span><br><span class="line">          setValue(newValue)</span><br><span class="line">        &#125;&#125;</span><br><span class="line">        inputValue=&#123;inputValue&#125;</span><br><span class="line">        onInputChange=&#123;<span class="function">(<span class="params">_, newInputValue</span>) =&gt;</span> &#123;</span><br><span class="line">          setInputValue(newInputValue)</span><br><span class="line">        &#125;&#125;</span><br><span class="line">        options=&#123;options&#125;</span><br><span class="line">        style=&#123;&#123; <span class="attr">width</span>: <span class="number">300</span> &#125;&#125;</span><br><span class="line">        renderInput=&#123;<span class="function">(<span class="params">params</span>) =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">TextField</span> &#123;<span class="attr">...params</span>&#125; <span class="attr">label</span>=<span class="string">&quot;Name&quot;</span> <span class="attr">variant</span>=<span class="string">&quot;outlined&quot;</span> /&gt;</span></span>&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><a href="https://stackoverflow.com/questions/63295924/a-component-is-changing-an-uncontrolled-autocomplete-to-be-controlled">A component is changing an uncontrolled Autocomplete to be controlled</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s3.us-west-2.amazonaws.com/secure.notion-static.com/829de34a-0bfc-4f05-a4c7-91ff0ec837ed/Untitled.png?X-Amz-Algorithm=A</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
+    
+    <category term="Material UI" scheme="http://example.com/tags/Material-UI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20211115 - 修改水平方向的滚动条样式</title>
+    <link href="http://example.com/2021/11/15/20211115%20-%20%E4%BF%AE%E6%94%B9%E6%B0%B4%E5%B9%B3%E6%96%B9%E5%90%91%E7%9A%84%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F/"/>
+    <id>http://example.com/2021/11/15/20211115%20-%20%E4%BF%AE%E6%94%B9%E6%B0%B4%E5%B9%B3%E6%96%B9%E5%90%91%E7%9A%84%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%A0%B7%E5%BC%8F/</id>
+    <published>2021-11-14T16:00:00.000Z</published>
+    <updated>2022-02-24T07:55:25.372Z</updated>
+    
+    <content type="html"><![CDATA[<p>修改 height 的值就是修改水平滚动条的高度</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c252a73c-d3f9-46f2-bcdf-e0e2ab32a280/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T075442Z&X-Amz-Expires=86400&X-Amz-Signature=02ea8db5a0b8ea59fdb4cda4b4964e91b51d9d3137eff7022eb2108792f1b67b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p><p><a href="https://stackoverflow.com/questions/44334106/how-can-i-style-horizontal-scrollbar-by-css">How can I style horizontal scrollbar by CSS?</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;修改 height 的值就是修改水平滚动条的高度&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c252a73c-d3f9-46f2-bcdf-e0e2ab32a28</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
+    
+    <category term="CSS" scheme="http://example.com/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>20211102 - OpenSSL SSL_connect Connection was reset in connection to github.com 443</title>
@@ -30,6 +167,60 @@
       
     <summary type="html">&lt;p&gt;代理相关&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://s3.us-west-2.amazonaws.com/secure.notion-static.com/095736b5-2abd-4ecd-b96c-171b254a66f4/Untitled.png?X-Amz</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20211102 - OpenSSL SSL_read Connection was reset, errno 10054</title>
+    <link href="http://example.com/2021/11/02/20211102%20-%20OpenSSL%20SSL_read%20Connection%20was%20reset%20errno%2010054/"/>
+    <id>http://example.com/2021/11/02/20211102%20-%20OpenSSL%20SSL_read%20Connection%20was%20reset%20errno%2010054/</id>
+    <published>2021-11-01T16:00:00.000Z</published>
+    <updated>2022-02-22T11:55:39.741Z</updated>
+    
+    <content type="html"><![CDATA[<p>遇到的情况是username, email出错</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --<span class="built_in">global</span> http.sslVerify <span class="string">&quot;false&quot;</span></span><br></pre></td></tr></table></figure><p><a href="https://www.cnblogs.com/fairylyl/p/15059437.html">Git 错误：OpenSSL SSL_read: Connection was reset, errno 10054</a></p><p><a href="https://blog.csdn.net/qq_29493173/article/details/114534057">Git报错解决：OpenSSL SSL_read: Connection was reset, errno 10054_Erya Programming learning-CSDN博客</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;遇到的情况是username, email出错&lt;/p&gt;
+&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;t</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20211102 - error src refspec main does not match any error failed to push some refs to &#39;https://github.com/xxx/xxx.git&#39;</title>
+    <link href="http://example.com/2021/11/02/20211102%20-%20error%20src%20refspec%20main%20does%20not%20match%20any%20error%20failed%20to%20push%20some%20refs%20to%20&#39;httpsgithub.comxxxxxx.git&#39;/"/>
+    <id>http://example.com/2021/11/02/20211102%20-%20error%20src%20refspec%20main%20does%20not%20match%20any%20error%20failed%20to%20push%20some%20refs%20to%20&#39;httpsgithub.comxxxxxx.git&#39;/</id>
+    <published>2021-11-01T16:00:00.000Z</published>
+    <updated>2022-02-22T11:56:02.536Z</updated>
+    
+    <content type="html"><![CDATA[<p>main master等等问题</p><p><a href="https://stackoverflow.com/questions/65173291/git-push-error-src-refspec-main-does-not-match-any-on-linux">git push error: src refspec main does not match any on linux</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;main master等等问题&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/65173291/git-push-error-src-refspec-main-does-not-match-any-on-linux&quot;</summary>
       
     
     
@@ -127,60 +318,6 @@
   </entry>
   
   <entry>
-    <title>20211102 - OpenSSL SSL_read Connection was reset, errno 10054</title>
-    <link href="http://example.com/2021/11/02/20211102%20-%20OpenSSL%20SSL_read%20Connection%20was%20reset%20errno%2010054/"/>
-    <id>http://example.com/2021/11/02/20211102%20-%20OpenSSL%20SSL_read%20Connection%20was%20reset%20errno%2010054/</id>
-    <published>2021-11-01T16:00:00.000Z</published>
-    <updated>2022-02-22T11:55:39.741Z</updated>
-    
-    <content type="html"><![CDATA[<p>遇到的情况是username, email出错</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --<span class="built_in">global</span> http.sslVerify <span class="string">&quot;false&quot;</span></span><br></pre></td></tr></table></figure><p><a href="https://www.cnblogs.com/fairylyl/p/15059437.html">Git 错误：OpenSSL SSL_read: Connection was reset, errno 10054</a></p><p><a href="https://blog.csdn.net/qq_29493173/article/details/114534057">Git报错解决：OpenSSL SSL_read: Connection was reset, errno 10054_Erya Programming learning-CSDN博客</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;遇到的情况是username, email出错&lt;/p&gt;
-&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;t</summary>
-      
-    
-    
-    
-    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
-    
-    
-    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
-    
-    <category term="Git" scheme="http://example.com/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20211102 - error src refspec main does not match any error failed to push some refs to &#39;https://github.com/xxx/xxx.git&#39;</title>
-    <link href="http://example.com/2021/11/02/20211102%20-%20error%20src%20refspec%20main%20does%20not%20match%20any%20error%20failed%20to%20push%20some%20refs%20to%20&#39;httpsgithub.comxxxxxx.git&#39;/"/>
-    <id>http://example.com/2021/11/02/20211102%20-%20error%20src%20refspec%20main%20does%20not%20match%20any%20error%20failed%20to%20push%20some%20refs%20to%20&#39;httpsgithub.comxxxxxx.git&#39;/</id>
-    <published>2021-11-01T16:00:00.000Z</published>
-    <updated>2022-02-22T11:56:02.536Z</updated>
-    
-    <content type="html"><![CDATA[<p>main master等等问题</p><p><a href="https://stackoverflow.com/questions/65173291/git-push-error-src-refspec-main-does-not-match-any-on-linux">git push error: src refspec main does not match any on linux</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;main master等等问题&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/65173291/git-push-error-src-refspec-main-does-not-match-any-on-linux&quot;</summary>
-      
-    
-    
-    
-    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
-    
-    
-    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
-    
-    <category term="Git" scheme="http://example.com/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
     <title>20211025 - git message</title>
     <link href="http://example.com/2021/10/25/20211025%20-%20git%20message/"/>
     <id>http://example.com/2021/10/25/20211025%20-%20git%20message/</id>
@@ -203,6 +340,212 @@
     <category term="Solved" scheme="http://example.com/tags/Solved/"/>
     
     <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20211014 - Promise 解决xml2js的返回值问题</title>
+    <link href="http://example.com/2021/10/14/20211014%20-%20Promise%20%E8%A7%A3%E5%86%B3xml2js%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2021/10/14/20211014%20-%20Promise%20%E8%A7%A3%E5%86%B3xml2js%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC%E9%97%AE%E9%A2%98/</id>
+    <published>2021-10-13T16:00:00.000Z</published>
+    <updated>2022-02-24T07:47:46.028Z</updated>
+    
+    <content type="html"><![CDATA[<p>因为Podcast的description只能在feedUrl里找到，无法直接获取，而feedUrl是xml文件，所以获取之后要先转成json格式。parseString import自xml2js的built-in方法。</p><p>修改前：直接接收parseString的返回值</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> desc = parseString(data, <span class="function">(<span class="params">err, result</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// console.log(result)</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// const &#123; rss &#125; = result</span></span><br><span class="line">      <span class="comment">// const &#123; channel &#125; = rss</span></span><br><span class="line">      <span class="comment">// const &#123; description &#125; = channel[0]</span></span><br><span class="line">      <span class="keyword">const</span> &#123; description &#125; = result.rss.channel[<span class="number">0</span>]</span><br><span class="line">      <span class="comment">// console.log(channel)</span></span><br><span class="line">      <span class="built_in">console</span>.log(description)  <span class="comment">// 正常值</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> description</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure><p>输出的结果是一个正常值，但返回到json中却是一个又臭又长的对象。。。</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/fb675d10-62f0-439a-a71a-03e6a6dd1111/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T074225Z&X-Amz-Expires=86400&X-Amz-Signature=ec97527d57131c2fa2f7951bafab7d85fc9baf3dec70078276b78649dfdf657c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p><p>修改后：创建一个Promise，Promise里面有一个函数（executor, which is called automatically），这个executor的参数resolve和reject是两个回调函数（由js本身提供）</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> desc = <span class="keyword">await</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> parseString(data, <span class="function">(<span class="params">err, result</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        reject(<span class="literal">null</span>)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// console.log(result)</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// const &#123; rss &#125; = result</span></span><br><span class="line">        <span class="comment">// const &#123; channel &#125; = rss</span></span><br><span class="line">        <span class="comment">// const &#123; description &#125; = channel[0]</span></span><br><span class="line">        <span class="keyword">const</span> &#123; description &#125; = result.rss.channel[<span class="number">0</span>]</span><br><span class="line">        <span class="comment">// console.log(channel)</span></span><br><span class="line">        <span class="built_in">console</span>.log(description)</span><br><span class="line"></span><br><span class="line">        resolve(description)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)).catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(error)</span><br><span class="line">    &#125;)  <span class="comment">// 记得处理reject的情况！！！否则会报错！暂时的结论：await只有当resolved后才会返回given的result，如果是rejected的情况，会抛出错误，需要catch处理。</span></span><br></pre></td></tr></table></figure><p>成功！</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3294ebe5-d1d7-4c2b-b464-4a3b093a9f29/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T074417Z&X-Amz-Expires=86400&X-Amz-Signature=66da765362e1ed32205ad5fe3cf9e9513edb6483c2a76b04f5b598292715c088&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><h1 id="重点："><a href="#重点：" class="headerlink" title="重点："></a>重点：</h1><p>When the executor obtains the result, be it soon or late, doesn’t matter, it should call one of these callbacks:</p><ul><li><code>resolve(value)</code> — if the job is finished successfully, with result <code>value</code>.</li><li><code>reject(error)</code> — if an error has occurred, <code>error</code> is the error object.</li></ul><p>The <code>promise</code> object returned by the <code>new Promise</code> constructor has these internal properties:</p><ul><li><code>state</code> — initially <code>&quot;pending&quot;</code>, then changes to either <code>&quot;fulfilled&quot;</code> when <code>resolve</code> is called or <code>&quot;rejected&quot;</code> when <code>reject</code> is called.</li><li><code>result</code> — initially <code>undefined</code>, then changes to <code>value</code> when <code>resolve(value)</code> called or <code>error</code> when <code>reject(error)</code> is called.</li></ul><p>💡 There can be only a single result or an error</p><p>The properties <code>state</code> and <code>result</code> of the Promise object are internal. We can’t directly access them. We can use the methods <code>.then</code>/<code>.catch</code>/<code>.finally</code> for that.</p><blockquote><p>await will wait for a Promise value to resolve, otherwise it’ll just wrap the value it is given in a promise and resolve the promise right away.</p></blockquote><h1 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h1><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d00b59ed-7105-4362-84e8-da4801d7f995/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T074445Z&X-Amz-Expires=86400&X-Amz-Signature=aae5b578b2e455cdcda684c0461fd3cf4918f04f94f34d25c6035e25b548650c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p><p><a href="https://stackoverflow.com/questions/45333264/how-to-get-xml2js-results-out-of-the-parser-in-es6">How to get xml2js results out of the parser in ES6?</a></p><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise - JavaScript | MDN</a></p><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await#promise_rejection">await - JavaScript | MDN</a></p><p><a href="https://javascript.info/promise-basics">Promise</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;因为Podcast的description只能在feedUrl里找到，无法直接获取，而feedUrl是xml文件，所以获取之后要先转成json格式。parseString import自xml2js的built-in方法。&lt;/p&gt;
+&lt;p&gt;修改前：直接接收parseStrin</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+    <category term="Node.js" scheme="http://example.com/tags/Node-js/"/>
+    
+    <category term="Promise" scheme="http://example.com/tags/Promise/"/>
+    
+    <category term="await/async" scheme="http://example.com/tags/await-async/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20211014 - encodeURI() 解决中文等字符报错的问题</title>
+    <link href="http://example.com/2021/10/14/20211014%20-%20encodeURI()%20%E8%A7%A3%E5%86%B3%E4%B8%AD%E6%96%87%E7%AD%89%E5%AD%97%E7%AC%A6%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2021/10/14/20211014%20-%20encodeURI()%20%E8%A7%A3%E5%86%B3%E4%B8%AD%E6%96%87%E7%AD%89%E5%AD%97%E7%AC%A6%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+    <published>2021-10-13T16:00:00.000Z</published>
+    <updated>2022-02-24T07:51:53.861Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> item = <span class="built_in">encodeURI</span>(request.params.item)</span><br></pre></td></tr></table></figure><p>注意：要在server端，也就是在node.js里对搜索关键词加encodeURI()！在前端写无效哈哈，因为后端才是the one that 直接向API发送get请求的。</p><p>参考：</p><p><a href="https://stackoverflow.com/questions/31024779/typeerror-request-path-contains-unescaped-characters-how-can-i-fix-this/48535265">TypeError: Request path contains unescaped characters, how can I fix this</a></p><p><a href="https://zhuanlan.zhihu.com/p/141608348">nodejs请求Request path contains unescaped characters</a></p><p><a href="https://blog.csdn.net/weixin_47529373/article/details/115415639">错误解决： Request path contains unescaped characters_coderbin的博客-CSDN博客</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
+    
+    <category term="Node.js" scheme="http://example.com/tags/Node-js/"/>
+    
+    <category term="Ajax" scheme="http://example.com/tags/Ajax/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20211013 - &#39;index.js1 Warning validateDOMNesting(...) figure cannot appear as a descendant of p.&#39;</title>
+    <link href="http://example.com/2021/10/13/20211013%20-%20&#39;index.js1%20Warning%20validateDOMNesting(...)%20figure%20cannot%20appear%20as%20a%20descendant%20of%20p.&#39;/"/>
+    <id>http://example.com/2021/10/13/20211013%20-%20&#39;index.js1%20Warning%20validateDOMNesting(...)%20figure%20cannot%20appear%20as%20a%20descendant%20of%20p.&#39;/</id>
+    <published>2021-10-12T16:00:00.000Z</published>
+    <updated>2022-02-24T07:40:21.257Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/15aa9a35-e59b-4ce6-9b95-f825eb23b6f2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T073033Z&X-Amz-Expires=86400&X-Amz-Signature=0f6fb06933dca6de54c7e9a26caea6aa65d7229b49dc9f11cb953fe8478206ed&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p>Material UI的Typography的variant默认body1，也就是component为<p>，而<p>只能包含行内元素。所以将component的值改为div就可以了。</p><h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h1><p><a href="https://stackoverflow.com/questions/41928567/div-cannot-appear-as-a-descendant-of-p">cannot appear as a descendant of</a></p><h2 id="Cool-explanations"><a href="#Cool-explanations" class="headerlink" title="Cool explanations:"></a>Cool explanations:</h2><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bf6cc8c6-bea9-425f-8d5e-3c956355284a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T073115Z&X-Amz-Expires=86400&X-Amz-Signature=7e0bac7f0606b282aae1bf62429beb161bb72a5eca52e72b70f70ad1ce75be07&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1130513e-e057-49a1-b34b-a0f4b23c8a3f/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T073139Z&X-Amz-Expires=86400&X-Amz-Signature=cee55e5bb7688140b634b082996b80359cae43df472003c2bc4f26372566ba3f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p><h1 id="Reference："><a href="#Reference：" class="headerlink" title="Reference："></a>Reference：</h1><p><a href="https://stackoverflow.com/questions/21400823/why-doesnt-my-div-inside-a-span-work-properly/21400869">Why doesn’t my div inside a span work properly?</a></p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9423a665-8e3c-41b3-b3a4-dba6896cea20/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T073220Z&X-Amz-Expires=86400&X-Amz-Signature=2294bc060baa5632f2b799b1fcdd80ac8539edb17f1d3ca6b4e763417e4a6ef7&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s3.us-west-2.amazonaws.com/secure.notion-static.com/15aa9a35-e59b-4ce6-9b95-f825eb23b6f2/Untitled.png?X-Amz-Algorithm=A</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
+    
+    <category term="CSS" scheme="http://example.com/tags/CSS/"/>
+    
+    <category term="Material UI" scheme="http://example.com/tags/Material-UI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20211013 - about exact in react-router</title>
+    <link href="http://example.com/2021/10/13/20211013%20-%20about%20exact%20in%20react-router/"/>
+    <id>http://example.com/2021/10/13/20211013%20-%20about%20exact%20in%20react-router/</id>
+    <published>2021-10-12T16:00:00.000Z</published>
+    <updated>2022-02-24T07:40:14.754Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route exact path=<span class="string">&quot;/&quot;</span> component=&#123;Home&#125; /&gt;  <span class="comment">// explanation: / -&gt; Home; /blahblah -&gt; blank</span></span><br><span class="line">&lt;Route exact path=<span class="string">&quot;/:id&quot;</span> component=&#123;Pod&#125; /&gt;  <span class="comment">// explanation: /:id -&gt; Pod; /:id/blahblah -&gt; blank</span></span><br><span class="line">&lt;Route path=<span class="string">&quot;/&quot;</span> component=&#123;Home&#125; /&gt; <span class="comment">// explanation: / -&gt; Home; /blahblah -&gt; Home</span></span><br></pre></td></tr></table></figure><p>exact的意思是精确匹配路径</p><p>加上exact之后，表明只匹配到path里的内容为止，如果不加exact，往path后面加上内容也会匹配到相同的组件。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
+    
+    <category term="React router" scheme="http://example.com/tags/React-router/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20211009 - can&#39;t get the value of e.target.id</title>
+    <link href="http://example.com/2021/10/09/20211009%20-%20can&#39;t%20get%20the%20value%20of%20e.target.id/"/>
+    <id>http://example.com/2021/10/09/20211009%20-%20can&#39;t%20get%20the%20value%20of%20e.target.id/</id>
+    <published>2021-10-08T16:00:00.000Z</published>
+    <updated>2022-02-24T07:39:52.724Z</updated>
+    
+    <content type="html"><![CDATA[<p>e.target.id取值不稳定，时有时无</p><p>e.target &amp; e.currentTaget</p><blockquote><p>target is the element that triggered the event (e.g., the user clicked on)<br>currentTarget is the element that the event listener is attached to.</p></blockquote><p><a href="https://stackoverflow.com/questions/5921413/difference-between-e-target-and-e-currenttarget">Difference between e.target and e.currentTarget</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;e.target.id取值不稳定，时有时无&lt;/p&gt;
+&lt;p&gt;e.target &amp;amp; e.currentTaget&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;target is the element that triggered the event (e.g., the </summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
+    
+    <category term="DOM" scheme="http://example.com/tags/DOM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20211009 - multiple onClick() events</title>
+    <link href="http://example.com/2021/10/09/20211009%20-%20multiple%20onClick()%20events/"/>
+    <id>http://example.com/2021/10/09/20211009%20-%20multiple%20onClick()%20events/</id>
+    <published>2021-10-08T16:00:00.000Z</published>
+    <updated>2022-02-24T07:39:58.925Z</updated>
+    
+    <content type="html"><![CDATA[<p>This helped!!!</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/064d5a0e-3e38-4381-936e-eb6b0c947017/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T071626Z&X-Amz-Expires=86400&X-Amz-Signature=17ffe169c746258d313799cec5034661b5576632cdeef2a8f496014d267e195b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p><p><a href="https://stackoverflow.com/questions/26069238/call-multiple-functions-onclick-reactjs">Call multiple functions onClick ReactJS</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;This helped!!!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.us-west-2.amazonaws.com/secure.notion-static.com/064d5a0e-3e38-4381-936e-eb6b0c947017/Untitled</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="React" scheme="http://example.com/tags/React/"/>
+    
+    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20211009 - onClick() event传参</title>
+    <link href="http://example.com/2021/10/09/20211009%20-%20onClick()%20event%E4%BC%A0%E5%8F%82/"/>
+    <id>http://example.com/2021/10/09/20211009%20-%20onClick()%20event%E4%BC%A0%E5%8F%82/</id>
+    <published>2021-10-08T16:00:00.000Z</published>
+    <updated>2022-02-24T07:40:05.638Z</updated>
+    
+    <content type="html"><![CDATA[<p>This helped!!!</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bcf2a829-9857-42fb-846a-4992f2110bf0/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T072029Z&X-Amz-Expires=86400&X-Amz-Signature=c36f6e7d97f8bdce772fb9fdb31740bfd44e324414766315e8eb6ac1a189096c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p><p><a href="https://stackoverflow.com/questions/55720466/typeerror-cannot-read-property-target-of-undefined">TypeError: Cannot read property ‘target’ of undefined</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;This helped!!!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bcf2a829-9857-42fb-846a-4992f2110bf0/Untitled</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="React" scheme="http://example.com/tags/React/"/>
+    
+    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+    <category term="Arrow function" scheme="http://example.com/tags/Arrow-function/"/>
+    
+    <category term="Closure" scheme="http://example.com/tags/Closure/"/>
     
   </entry>
   
@@ -234,347 +577,6 @@
     <category term="MongoDB" scheme="http://example.com/tags/MongoDB/"/>
     
     <category term="Mongoose" scheme="http://example.com/tags/Mongoose/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20210917 - Assign object to a variable before exporting as module default import/no-anonymous-default-export</title>
-    <link href="http://example.com/2021/09/17/20210917%20-%20Assign%20object%20to%20a%20variable%20before%20exporting%20as%20module%20default%20importno-anonymous-default-export/"/>
-    <id>http://example.com/2021/09/17/20210917%20-%20Assign%20object%20to%20a%20variable%20before%20exporting%20as%20module%20default%20importno-anonymous-default-export/</id>
-    <published>2021-09-16T16:00:00.000Z</published>
-    <updated>2022-02-22T11:11:36.749Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>react_devtools_backend.js:4049 src\services\persons.js Line 27:1:  Assign object to a variable before exporting as module default  import/no-anonymous-default-export</p></blockquote><p>出现了这个warning。</p><p>修改前的代码：</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123; getAll, create, update, remove &#125;</span><br></pre></td></tr></table></figure><p>修改后的代码：</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> personService = &#123;</span><br><span class="line">  getAll,</span><br><span class="line">  create,</span><br><span class="line">  update,</span><br><span class="line">  remove</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> personService</span><br></pre></td></tr></table></figure><p>参考：</p><p><a href="https://stackoverflow.com/questions/64729264/how-can-i-get-rid-of-the-warning-import-no-anonymous-default-export-in-react">How can I get rid of the warning import/no-anonymous-default-export in React?</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;react_devtools_backend.js:4049 src\services\persons.js Line 27:1:  Assign object to a variable before exporting as module de</summary>
-      
-    
-    
-    
-    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
-    
-    
-    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
-    
-    <category term="ES6" scheme="http://example.com/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20210916 - Cannot read property &#39;name&#39; of null</title>
-    <link href="http://example.com/2021/09/16/20210916%20-%20Cannot%20read%20property%20&#39;name&#39;%20of%20null/"/>
-    <id>http://example.com/2021/09/16/20210916%20-%20Cannot%20read%20property%20&#39;name&#39;%20of%20null/</id>
-    <published>2021-09-15T16:00:00.000Z</published>
-    <updated>2022-02-22T12:24:25.353Z</updated>
-    
-    <content type="html"><![CDATA[<p>起因：</p><p>做phonebook的时候发现一个bug：后端新建一个联系人，前端刷新，更新最新的phonebook，并返回后端删除刚刚新建的联系人，前端修改这个联系人（实际上数据库中已经不存在）的信息，submit后报如下错误：</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/934c6c21-d1c2-4979-8451-9b2982f2be6c/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T110714Z&X-Amz-Expires=86400&X-Amz-Signature=be8f9295a8653105496fc828d414ed45b55e6990c4dedd8a46ebe14c8292e487&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p>前端代码：</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> samePerson = persons.find(<span class="function"><span class="params">person</span> =&gt;</span> person.name === newName)</span><br><span class="line"><span class="keyword">const</span> changedPerson = &#123;...samePerson, <span class="attr">number</span>: newNumber&#125;</span><br><span class="line"></span><br><span class="line">personService</span><br><span class="line">.update(samePerson.id, changedPerson)</span><br><span class="line">  .then(<span class="function"><span class="params">returnedPerson</span> =&gt;</span> &#123;</span><br><span class="line">**<span class="built_in">console</span>.log(returnedPerson)  <span class="comment">// Debug**</span></span><br><span class="line">    setPersons(persons.map(<span class="function"><span class="params">person</span> =&gt;</span> person.id === samePerson.id ? returnedPerson : person))</span><br><span class="line">    setNewName(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    setNewNumber(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    setError(<span class="literal">false</span>)</span><br><span class="line">    setMessage(</span><br><span class="line">    <span class="string">`Updated <span class="subst">$&#123;returnedPerson.name&#125;</span>&#x27;s number`</span></span><br><span class="line">    )</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    setMessage(<span class="literal">null</span>)</span><br><span class="line">   &#125;, <span class="number">5000</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">  setMessage(</span><br><span class="line">    <span class="string">`Information of <span class="subst">$&#123;samePerson.name&#125;</span> has already been removed from server`</span></span><br><span class="line">    )</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    setMessage(<span class="literal">null</span>)</span><br><span class="line">&#125;, <span class="number">5000</span>);</span><br><span class="line">    setPersons(persons.filter(<span class="function"><span class="params">person</span> =&gt;</span> person.name !== newName))</span><br><span class="line">  setError(<span class="literal">true</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>修改前的后端代码：</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">app.put(<span class="string">&#x27;/api/persons/:id&#x27;</span>, <span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> body = req.body</span><br><span class="line">  <span class="keyword">const</span> person = &#123;</span><br><span class="line">    name: body.name,</span><br><span class="line">    number: body.number,</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Person.findByIdAndUpdate(req.params.id, person, &#123;<span class="attr">new</span>: <span class="literal">true</span>&#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">updatedPerson</span> =&gt;</span> &#123;</span><br><span class="line"> **<span class="built_in">console</span>.log(updatedPerson)  <span class="comment">// Debug**</span></span><br><span class="line">       res.json(updatedPerson)</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function"><span class="params">error</span> =&gt;</span> next(error))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>先debug前端代码，发现接收到的put请求的返回值<code>returnedPerson</code> 为null，<del>按理说这种情况promise应该rejected，进入catch，并且输出报错的message。</del></p><p>debug后端代码，发现更新数据后返回的<code>updatedPerson</code> 也为null，于是加了个判断，不为null就返回，为null就报错，返回给前端就是rejected，进入catch，并输出报错的message。</p><p>修改后的后端代码：</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">app.put(<span class="string">&#x27;/api/persons/:id&#x27;</span>, <span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> body = req.body</span><br><span class="line">  <span class="keyword">const</span> person = &#123;</span><br><span class="line">    name: body.name,</span><br><span class="line">    number: body.number,</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Person.findByIdAndUpdate(req.params.id, person, &#123;<span class="attr">new</span>: <span class="literal">true</span>&#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">updatedPerson</span> =&gt;</span> &#123;</span><br><span class="line"><span class="built_in">console</span>.log(updatedPerson)</span><br><span class="line">      <span class="keyword">if</span> (updatedPerson) &#123;</span><br><span class="line">        res.json(updatedPerson)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        res.status(<span class="number">404</span>).end()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function"><span class="params">error</span> =&gt;</span> next(error))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>React App可以正常运行</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3fd5ab76-2d8a-42dd-8a70-2b0017a2964b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T110230Z&X-Amz-Expires=86400&X-Amz-Signature=eea470c1074513d794ae219d61d1aa24797d36dafea00468b8cc8dede53b7859&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p>这个情况和之前在GET请求中用<code>findByID()</code> 获取单个document很相似，那个案例中也是对返回值作了判断，如果是id合法但未找到信息（被删除或者本来就不存在），就返回null（没测试过，但理论上应该是这样），而id不合法直接进入catch返回error。所以大概是mongoose的findXXX方法的特性？？</p><p><a href="/2021/09/15/20210915%20-%20%E4%B8%A4%E7%A7%8D%E6%83%85%E5%86%B5%E4%B8%A4%E7%A7%8D%E7%8A%B6%E6%80%81%E7%A0%81/">20210915 - 两种情况两种状态码</a></p><p>另（这是我发现这个错误之前的前端代码）：</p><p>这段代码让我疑惑的点是，为什么在<code>setNewName(&#39;&#39;)</code>之后，<code>setMessage()</code>仍然可以获得<code>newName</code>的值？之前写的时候竟然没注意到。。。</p><p>（关于这个，听过一种说法是，多个setState的时候，可能会组团一起更新。。）</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">personService</span><br><span class="line">     .update(samePerson.id, changedPerson)</span><br><span class="line">     .then(<span class="function"><span class="params">returnedPerson</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="built_in">console</span>.log(returnedPerson)</span><br><span class="line">       setPersons(persons.map(<span class="function"><span class="params">person</span> =&gt;</span> person.id === samePerson.id ? returnedPerson : person))</span><br><span class="line">       setNewName(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">       setNewNumber(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">       setError(<span class="literal">false</span>)</span><br><span class="line">       setMessage(</span><br><span class="line">         <span class="string">`Updated <span class="subst">$&#123;**newName**&#125;</span>&#x27;s number`</span></span><br><span class="line">       )</span><br><span class="line">       <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">         setMessage(<span class="literal">null</span>)</span><br><span class="line">       &#125;, <span class="number">5000</span>)</span><br><span class="line">     &#125;)</span><br><span class="line">     .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">setNewName(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">       setNewNumber(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">       setMessage(</span><br><span class="line">         <span class="string">`Information of <span class="subst">$&#123;**newName**&#125;</span> has already been removed from server`</span></span><br><span class="line">       )</span><br><span class="line">       <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">         setMessage(<span class="literal">null</span>)</span><br><span class="line">       &#125;, <span class="number">5000</span>);</span><br><span class="line">       setPersons(persons.filter(<span class="function"><span class="params">person</span> =&gt;</span> person.name !== newName))</span><br><span class="line">       setError(<span class="literal">true</span>)</span><br><span class="line">     &#125;)</span><br></pre></td></tr></table></figure><p>贴一下相关的问答和参考：</p><p><a href="https://qastack.cn/programming/30782948/why-calling-react-setstate-method-doesnt-mutate-the-state-immediately">为什么调用react setState方法不会立即改变状态？</a></p><p><a href="https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/">React Lifecycle Methods diagram</a></p><p><a href="https://zh-hans.reactjs.org/docs/react-component.html#setstate">React.Component - React</a></p><p><a href="https://stackoverflow.com/questions/38558200/react-setstate-not-updating-immediately">React setState not Updating Immediately</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;起因：&lt;/p&gt;
-&lt;p&gt;做phonebook的时候发现一个bug：后端新建一个联系人，前端刷新，更新最新的phonebook，并返回后端删除刚刚新建的联系人，前端修改这个联系人（实际上数据库中已经不存在）的信息，submit后报如下错误：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;h</summary>
-      
-    
-    
-    
-    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
-    
-    
-    <category term="React" scheme="http://example.com/tags/React/"/>
-    
-    <category term="Half-solved" scheme="http://example.com/tags/Half-solved/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20210916 - JSON</title>
-    <link href="http://example.com/2021/09/16/20210916%20-%20JSON/"/>
-    <id>http://example.com/2021/09/16/20210916%20-%20JSON/</id>
-    <published>2021-09-15T16:00:00.000Z</published>
-    <updated>2022-02-22T11:08:10.022Z</updated>
-    
-    <content type="html"><![CDATA[<p>后端发送的response是把updatedNote这个object转成JSON string</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">app.put(<span class="string">&#x27;/api/notes/:id&#x27;</span>, <span class="function">(<span class="params">request, response, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> body = request.body</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> note = &#123;</span><br><span class="line">    content: body.content,</span><br><span class="line">    important: body.important,</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Note.findByIdAndUpdate(request.params.id, note, &#123;<span class="attr">new</span>: <span class="literal">true</span>&#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">updatedNote</span> =&gt;</span> &#123;</span><br><span class="line">      **<span class="comment">// console.log(typeof updatedNote)  // object**</span></span><br><span class="line">      response.json(updatedNote)</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function"><span class="params">error</span> =&gt;</span> next(error))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>前端接收到的整个response和response.data的类型都是object。</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5e00126a-88de-41b2-80dd-7c725c49296e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T105259Z&X-Amz-Expires=86400&X-Amz-Signature=5cab7f8e4dc0e1fbc4014574c6fdf5eca381af218fc8f6eadef26ed6e13ee993&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e7aefb59-989a-4fb2-8f8a-b5b3a9805d65/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T105318Z&X-Amz-Expires=86400&X-Amz-Signature=f246a58a366ff52e4aca811c5bee6ab8b615fd0b0a62be7a3da42c1c8c855eae&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p>然而json的类型是string，为什么传回前端变成object了？还是说中间有更复杂的操作？</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;后端发送的response是把updatedNote这个object转成JSON string&lt;/p&gt;
-&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1</summary>
-      
-    
-    
-    
-    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
-    
-    
-    <category term="JSON" scheme="http://example.com/tags/JSON/"/>
-    
-    <category term="Ajax" scheme="http://example.com/tags/Ajax/"/>
-    
-    <category term="HTTP" scheme="http://example.com/tags/HTTP/"/>
-    
-    <category term="Unsolved" scheme="http://example.com/tags/Unsolved/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20210916 - unique validator</title>
-    <link href="http://example.com/2021/09/16/20210916%20-%20unique%20validator/"/>
-    <id>http://example.com/2021/09/16/20210916%20-%20unique%20validator/</id>
-    <published>2021-09-15T16:00:00.000Z</published>
-    <updated>2022-02-22T10:54:29.540Z</updated>
-    
-    <content type="html"><![CDATA[<p>按照github上的instruction安装了mongoose-unique-validator，并配置了相应的属性。</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> personSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</span><br><span class="line">  name: &#123;</span><br><span class="line">    type: <span class="built_in">String</span>,</span><br><span class="line">    required: <span class="literal">true</span>,</span><br><span class="line">    unique: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  number: &#123;</span><br><span class="line">    type: <span class="built_in">String</span>,</span><br><span class="line">    required: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">personSchema.plugin(uniqueValidator)</span><br></pre></td></tr></table></figure><p>测试后，同名的联系人的确是无法添加到数据库了。</p><p>但是！在<strong>前中后面</strong>加空格还是可以的，并且每个地方显示空格的数量还不一样。。。</p><p>比如VSCode REST Client、服务端的Terminal和数据库，显示的就是输入的空格数（7个）</p><p>而网页render后完全没有体现出空格。</p><p>在JSON里，只有在最后多出了一个空格（在前面加多个空格，在JSON里面会在前面多出一个空格；在中间加多个空格，在JSON里中间也只会有一个空格）</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1588ea3a-33ab-434e-bdc5-d46522da3d09/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T103446Z&X-Amz-Expires=86400&X-Amz-Signature=890a5d05e4ee9aa6bf514db612c286828236f891b5bb9ad327316ef69bda66fe&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/200b155c-9724-47ed-883e-c7a59c83c147/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T103458Z&X-Amz-Expires=86400&X-Amz-Signature=29052a113ceda787fe409f8e3924bd6bbb06cf1d3a39e964027a1eb4ac74db00&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/024740f9-05cb-4ba8-9fab-d7e53fc7a48c/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T104211Z&X-Amz-Expires=86400&X-Amz-Signature=b5fd90f3bef7825dab1f7114962346fc7c776133f6e99e7280463657e2e9b07a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/63c183cc-b75d-4282-9fb1-db915ab1f058/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T104228Z&X-Amz-Expires=86400&X-Amz-Signature=7c32d5d18f6431ddc56b3d8ef338faf4e5d5414101e2717cac6da375f3202365&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/050615b9-6d99-4ff0-8eb1-08c1abe70dae/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T104347Z&X-Amz-Expires=86400&X-Amz-Signature=a4b53fe92f3e1af7dce04094d259125390aaad996e1d66e68e6d80d191b8a3c0&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;按照github上的instruction安装了mongoose-unique-validator，并配置了相应的属性。&lt;/p&gt;
-&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span c</summary>
-      
-    
-    
-    
-    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
-    
-    
-    <category term="MongoDB" scheme="http://example.com/tags/MongoDB/"/>
-    
-    <category term="Unsolved" scheme="http://example.com/tags/Unsolved/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20210916 - Manually set environment variables to Heroku</title>
-    <link href="http://example.com/2021/09/16/20210916%20-%20Manually%20set%20environment%20variables%20to%20Heroku/"/>
-    <id>http://example.com/2021/09/16/20210916%20-%20Manually%20set%20environment%20variables%20to%20Heroku/</id>
-    <published>2021-09-15T16:00:00.000Z</published>
-    <updated>2022-02-22T10:54:37.396Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Option-1"><a href="#Option-1" class="headerlink" title="Option 1:"></a>Option 1:</h1><p><strong>We defined the environment variables for development in file .env, but the environment variable that defines the database URL in production should be set to Heroku with the *heroku config:set* command.</strong></p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ heroku config:set MONGODB_URI=mongodb+srv:<span class="comment">//fullstack:secretpasswordhere@cluster0-ostce.mongodb.net/note-app?retryWrites=true</span></span><br></pre></td></tr></table></figure><p><strong>NB: if the command causes an error, give the value of MONGODB_URI in apostrophes:</strong></p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ heroku config:set MONGODB_URI=<span class="string">&#x27;mongodb+srv://fullstack:secretpasswordhere@cluster0-ostce.mongodb.net/note-app?retryWrites=true&#x27;</span></span><br></pre></td></tr></table></figure><h1 id="Option-2-recommended"><a href="#Option-2-recommended" class="headerlink" title="Option 2: (recommended!)"></a>Option 2: (recommended!)</h1><p>Heroku App → Setting → Config Vars</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a68c7a20-a517-4b13-ae4a-355b1acf72af/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T094405Z&X-Amz-Expires=86400&X-Amz-Signature=cba53dfb9c562bcbe87c8db28de1670db331f5af2786940b486601bfad9c136b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p>I’ve set MONGODB_URI via git bash but it didn’t work, so I tried one more time by manually setting it on Heroku. It worked!</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;Option-1&quot;&gt;&lt;a href=&quot;#Option-1&quot; class=&quot;headerlink&quot; title=&quot;Option 1:&quot;&gt;&lt;/a&gt;Option 1:&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;We defined the environment variables</summary>
-      
-    
-    
-    
-    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
-    
-    
-    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
-    
-    <category term="MongoDB" scheme="http://example.com/tags/MongoDB/"/>
-    
-    <category term="Heroku" scheme="http://example.com/tags/Heroku/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20210916 - 不同阶段console.log(data)的结果</title>
-    <link href="http://example.com/2021/09/16/20210916%20-%20%E4%B8%8D%E5%90%8C%E9%98%B6%E6%AE%B5console.log(data)%E7%9A%84%E7%BB%93%E6%9E%9C/"/>
-    <id>http://example.com/2021/09/16/20210916%20-%20%E4%B8%8D%E5%90%8C%E9%98%B6%E6%AE%B5console.log(data)%E7%9A%84%E7%BB%93%E6%9E%9C/</id>
-    <published>2021-09-15T16:00:00.000Z</published>
-    <updated>2022-02-24T06:10:28.460Z</updated>
-    
-    <content type="html"><![CDATA[<p>:warning: <em>This post contains some vulgar words…</em></p><p>POST：</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1623aa2f-b73f-4e5f-be73-dfd30eff2a62/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T093222Z&X-Amz-Expires=86400&X-Amz-Signature=15591680c6dd5d42da9289844501baf461b9938b1ae10f2438eed97dea62ff3e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p><p>代码：</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> requestLogger = <span class="function">(<span class="params">request, response, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;Method:&#x27;</span>, request.method)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;Path:  &#x27;</span>, request.path)</span><br><span class="line">  **<span class="built_in">console</span>.log(<span class="string">&#x27;Body:  &#x27;</span>, request.body)  <span class="comment">// First log**</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;---&#x27;</span>)</span><br><span class="line">  next()</span><br><span class="line">&#125;</span><br><span class="line">app.use(requestLogger)</span><br><span class="line">app.post(<span class="string">&#x27;/api/notes&#x27;</span>, <span class="function">(<span class="params">request, response</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// Without the json-parser, the body property would be undefined.</span></span><br><span class="line">  <span class="keyword">const</span> body = request.body</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!body.content) &#123;</span><br><span class="line">    <span class="keyword">return</span> response.status(<span class="number">400</span>).json(&#123;</span><br><span class="line">      error: <span class="string">&#x27;content missing&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> note = <span class="keyword">new</span> Note(&#123;</span><br><span class="line">    content: body.content,</span><br><span class="line">    important: body.important || <span class="literal">false</span>,</span><br><span class="line">    <span class="comment">// It is better to generate timestamps on the server than in the browser, since we can&#x27;t trust that host machine running the browser has its clock set correctly. </span></span><br><span class="line">    date: <span class="keyword">new</span> <span class="built_in">Date</span>(),</span><br><span class="line">    <span class="comment">// id: generateID()</span></span><br><span class="line">  &#125;)</span><br><span class="line">  **<span class="built_in">console</span>.log(note)  <span class="comment">// Second log**</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// notes = notes.concat(note)</span></span><br><span class="line">  note.save().then(<span class="function"><span class="params">savedNote</span> =&gt;</span> &#123;</span><br><span class="line">    **<span class="built_in">console</span>.log(savedNote)  <span class="comment">// Third log**</span></span><br><span class="line">    response.json(savedNote)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>三个log都在服务器端。</p><p>第一个log来自中间件requestLogger（中间件都是在route handler之前执行）中的Body输出。此时request.body保存的是你在前端界面输入并submit（按下按钮或者回车）发送POST请求成功之后的数据，从log的结果 <code>id: 5</code> 可以看出这个时候数据的格式还是在做前端的时候设定的。</p><p>第二个log来自POST route handler。服务器接收到POST请求并执行完中间件后，用Note（Model）创建了一个note（Document），所以log的结果就是Model的格式。</p><p>第三个log是在（only if）save到MongoDB成功之后，返回的savedNote是保存到数据库中的Document的结果，也就是依照数据库中的格式。</p><p>GET：</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/67f96a38-a919-4766-a0e1-20a672cf8c68/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T093351Z&X-Amz-Expires=86400&X-Amz-Signature=015db951d2e8d12a191c6a005867a888d9cbbf6193e718769f8f795088a60e7c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p><p>代码：</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&#x27;/api/notes&#x27;</span>, <span class="function">(<span class="params">request, response</span>) =&gt;</span> &#123;</span><br><span class="line">  Note.find(&#123;&#125;).then(<span class="function"><span class="params">notes</span> =&gt;</span> &#123;</span><br><span class="line">    **<span class="built_in">console</span>.log(notes)  <span class="comment">// Log**</span></span><br><span class="line">    <span class="comment">// It&#x27;s worth noting, that JSON is a string, and not a JavaScript object like the value assigned to notes.</span></span><br><span class="line">    response.json(notes)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>log是在（only if）Note.find({})（find all documents）成功查找所有Documents之后，返回的notes就是一个包含所有Documents的数组。</p><p>另：</p><p>这种情况属于直接在服务器端（也不确定，反正不是在前端POST的就是了。。。XD）添加，越过了前端。</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ce50bb7f-6f40-4b77-9857-297ead2cc9a7/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T093447Z&X-Amz-Expires=86400&X-Amz-Signature=82ecece08b66c10b9ab22446581301c2ac00175d5d633c63cb007f6f2e5c461f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p>New!</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">app.post(<span class="string">&#x27;/api/notes&#x27;</span>, <span class="function">(<span class="params">request, response, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// Without the json-parser, the body property would be undefined.</span></span><br><span class="line">  <span class="keyword">const</span> body = request.body</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> note = <span class="keyword">new</span> Note(&#123;</span><br><span class="line">    content: body.content,</span><br><span class="line">    important: body.important || <span class="literal">false</span>,</span><br><span class="line">    <span class="comment">// It is better to generate timestamps on the server than in the browser, since we can&#x27;t trust that host machine running the browser has its clock set correctly. </span></span><br><span class="line">    date: <span class="keyword">new</span> <span class="built_in">Date</span>(),</span><br><span class="line">    <span class="comment">// id: generateID()</span></span><br><span class="line">  &#125;)</span><br><span class="line">  **<span class="built_in">console</span>.log(note)  <span class="comment">// Second log**</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// notes = notes.concat(note)</span></span><br><span class="line">  note.save()</span><br><span class="line">    .then(<span class="function"><span class="params">savedNote</span> =&gt;</span> &#123;</span><br><span class="line">      **<span class="built_in">console</span>.log(savedNote)  <span class="comment">// Third log**</span></span><br><span class="line">      </span><br><span class="line">      **<span class="built_in">console</span>.log(savedNote.toJSON())  <span class="comment">// Forth log**</span></span><br><span class="line">      <span class="comment">// we can perform this operation explicitly by calling the toJSON method</span></span><br><span class="line">      response.json(savedNote.toJSON())</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function"><span class="params">error</span> =&gt;</span> next(error))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>这四个logs比较典型，格式都不一样，注意一下显式调用<code>toJSON()</code>方法的那个log。</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2d2f4c1d-7b1d-423d-9dd7-6f0344cfdfd1/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T093503Z&X-Amz-Expires=86400&X-Amz-Signature=024d95d3e8460f99ded23c0278be89fe18e511ceb4d72b283c22f78478dbe13e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;:warning: &lt;em&gt;This post contains some vulgar words…&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;POST：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://s3.us-west-2.amazonaws.com/secure.notion-s</summary>
-      
-    
-    
-    
-    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
-    
-    
-    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
-    
-    <category term="Node.js" scheme="http://example.com/tags/Node-js/"/>
-    
-    <category term="MongoDB" scheme="http://example.com/tags/MongoDB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20210915 - 两种情况两种状态码</title>
-    <link href="http://example.com/2021/09/15/20210915%20-%20%E4%B8%A4%E7%A7%8D%E6%83%85%E5%86%B5%E4%B8%A4%E7%A7%8D%E7%8A%B6%E6%80%81%E7%A0%81/"/>
-    <id>http://example.com/2021/09/15/20210915%20-%20%E4%B8%A4%E7%A7%8D%E6%83%85%E5%86%B5%E4%B8%A4%E7%A7%8D%E7%8A%B6%E6%80%81%E7%A0%81/</id>
-    <published>2021-09-14T16:00:00.000Z</published>
-    <updated>2022-02-22T10:54:45.275Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&#x27;/api/notes/:id&#x27;</span>, <span class="function">(<span class="params">request, response</span>) =&gt;</span> &#123;</span><br><span class="line">  Note.findById(request.params.id)</span><br><span class="line">    .then(<span class="function"><span class="params">note</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (note) &#123;</span><br><span class="line">       response.json(note) </span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        **response.status(<span class="number">404</span>).end()**</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(error)</span><br><span class="line">      **response.status(<span class="number">400</span>).send(&#123;<span class="attr">error</span>: <span class="string">&quot;malformed id&quot;</span>&#125;)**</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7c075884-9e99-41ca-a338-5eacfbaf6a4d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T092611Z&X-Amz-Expires=86400&X-Amz-Signature=2e002a08e108588334731e0f64dc8b17b2923e1fc5f98e5d23e4b77d912153ce&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/233649e8-bef6-4edb-b663-14e0ad8391c2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T092622Z&X-Amz-Expires=86400&X-Amz-Signature=655da6fe911b848192890d248085e47d03a5171df6cb681a390e4f0ee864b788&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/053bf00e-3f6e-44be-ba91-e96bf27cdae3/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T092637Z&X-Amz-Expires=86400&X-Amz-Signature=ab03c480e8a258f6b766a5a8f9343240c482160c1036a5cf664715e410ac904a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p>之所以分两种状态码，是因为有两种错误。。</p><p>下面这个应该是属于invalid id吧，猜测判断是否valid是根据id的长度来的，如果长度匹配就报404，长度不匹配报400</p><p>关于400状态码</p><blockquote><p>The request could not be understood by the server due to malformed syntax. The client SHOULD NOT repeat the request without modifications.</p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;figure class=&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;</summary>
-      
-    
-    
-    
-    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
-    
-    
-    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
-    
-    <category term="Node.js" scheme="http://example.com/tags/Node-js/"/>
-    
-    <category term="Status code" scheme="http://example.com/tags/Status-code/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20210914 - Fail to access environment variables from .env file</title>
-    <link href="http://example.com/2021/09/14/20210914%20-%20Fail%20to%20access%20environment%20variables%20from%20.env%20file/"/>
-    <id>http://example.com/2021/09/14/20210914%20-%20Fail%20to%20access%20environment%20variables%20from%20.env%20file/</id>
-    <published>2021-09-13T16:00:00.000Z</published>
-    <updated>2022-02-22T10:54:52.490Z</updated>
-    
-    <content type="html"><![CDATA[<p>之前在一个React的Demo中用api获取天气信息的时候用到过环境变量，大概就是三个步骤，第一：把REACT_APP_API_KEY的value保存在.env文件里；第二：通过process.env.REACT_APP_API_KEY获取和使用value；第三：把.env加到.gitignore里，避免被push到git repository。</p><p>这次的目标是连接Node.js后端和MongoDB。MongoDB的URL中的password需要保存为环境变量，我就完全按照上次总结的步骤行事，但是报错了。直接在URL中写入password的值和console(password)后发现这个error应该是没有获取到环境变量导致的。</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f2847d77-707c-41d6-b4d6-e55018d4714d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T091918Z&X-Amz-Expires=86400&X-Amz-Signature=3ea01dcd0b84ca9905953922eb5f1a23aebc4ae4d3759b220dadeadfe6f9c6a8&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>第一步：添加dotenv依赖</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install dotenv</span><br><span class="line"><span class="string">&quot;dependencies&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;cors&quot;</span>: <span class="string">&quot;^2.8.5&quot;</span>,</span><br><span class="line">    **<span class="string">&quot;dotenv&quot;</span>: <span class="string">&quot;^10.0.0&quot;</span>,**</span><br><span class="line">    <span class="string">&quot;express&quot;</span>: <span class="string">&quot;^4.17.1&quot;</span>,</span><br><span class="line">    <span class="string">&quot;mongoose&quot;</span>: <span class="string">&quot;^6.0.5&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure><p>关于dotenv</p><blockquote><p>Dotenv is a zero-dependency module that loads environment variables from a <code>.env</code> file into <strong><code>[process.env](&lt;https://nodejs.org/docs/latest/api/process.html#process_process_env&gt;)</code></strong>. Storing configuration in the environment separate from code is based on <strong><a href="http://12factor.net/config">The Twelve-Factor App</a></strong> methodology.</p></blockquote><p>第二步：在index.js中引入</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dotenv = <span class="built_in">require</span>(<span class="string">&#x27;dotenv&#x27;</span>)</span><br><span class="line">dotenv.config()</span><br></pre></td></tr></table></figure><p>关于config</p><blockquote><p>config will read your .env file, parse the contents, assign it to process.env, and return an Object with a parsed key containing the loaded content or an error key if it failed.</p></blockquote><p>然后就和数据库连接成功了！</p><h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>大概.env里的环境变量在Node.js这边不能直接获取和使用，需要先添加dotenv依赖后才可。</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://dev.to/aritik/connecting-to-mongodb-using-mongoose-3akh">Connecting to MongoDB using Mongoose 🌳</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;之前在一个React的Demo中用api获取天气信息的时候用到过环境变量，大概就是三个步骤，第一：把REACT_APP_API_KEY的value保存在.env文件里；第二：通过process.env.REACT_APP_API_KEY获取和使用value；第三：把.env</summary>
-      
-    
-    
-    
-    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
-    
-    
-    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
-    
-    <category term="Node.js" scheme="http://example.com/tags/Node-js/"/>
-    
-    <category term="Dotenv" scheme="http://example.com/tags/Dotenv/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20210914 - `node xxx.js MY_PASSWORD` caused errors</title>
-    <link href="http://example.com/2021/09/14/20210914%20-%20%60node%20xxx.js%20MY_PASSWORD%60%20caused%20errors/"/>
-    <id>http://example.com/2021/09/14/20210914%20-%20%60node%20xxx.js%20MY_PASSWORD%60%20caused%20errors/</id>
-    <published>2021-09-13T16:00:00.000Z</published>
-    <updated>2022-02-23T06:30:41.586Z</updated>
-    
-    <content type="html"><![CDATA[<p>A review of connecting to mongodb</p><p>…</p><p>step 1: Create a new cluster</p><p>step 2: Select service + region</p><p>I tried to save data to mongodb. After double checking the password, the IP whitelist and that the connection string was correct, I still got these errors even if I succeeded in creating collections but unfortunately no data was saved to it. </p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/34a0a13e-3487-4825-9e68-021faaf274ca/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T091011Z&X-Amz-Expires=86400&X-Amz-Signature=4aab943ba714c90685f20365eb390ddba54866f506d9a79683096b0199492f11&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p>save section:</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">note.save().then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;note saved!&#x27;</span>)</span><br><span class="line">  mongoose.connection.close()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>mongodb dashboard:</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/97f0fc97-3696-49f2-88a3-731db82fe47b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T091046Z&X-Amz-Expires=86400&X-Amz-Signature=72129f183d137dd6e9ff1a4944a4d43df7ee9e53da0f62361cd1cb06f83aed5c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p>Then I followed the steps on Telegram and add <code>catch()</code> to catch errors</p><p>save section:</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">note.save().then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;note saved!&#x27;</span>)</span><br><span class="line">  mongoose.connection.close()</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err))</span><br></pre></td></tr></table></figure><p>But still one error left and no data in mongodb dashboard:</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/84c6e177-4bba-4243-adad-dd5114d18198/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T091116Z&X-Amz-Expires=86400&X-Amz-Signature=17daad3f7b3f4d19a814887d453a00506a8edd60c472ad11c733b5bb17c66d2f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p>Eventually I found the solution that successfully saved the data to collection:</p><blockquote><p>Anyone else who get this warning when connecting to mongoDB cluster just change the driver version from 3.* to 2.* From connect &gt; connect your application &gt; version select 2.2.* or later</p></blockquote><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4b87bcc7-eb5f-4428-b28f-c5cd463a59d5/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T091147Z&X-Amz-Expires=86400&X-Amz-Signature=89614ce3d8bd1b6537ba5c1d2d673f3dc51cb11032617666958290666bfd66e6&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p>So the url section turned to this:</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> url = <span class="string">`mongodb://fullstack:<span class="subst">$&#123;password&#125;</span>@cluster0-shard-00-00.xfjup.mongodb.net:27017,cluster0-shard-00-01.xfjup.mongodb.net:27017,cluster0-shard-00-02.xfjup.mongodb.net:27017/myFirstDatabase?ssl=true&amp;replicaSet=atlas-rob6kd-shard-0&amp;authSource=admin&amp;retryWrites=true&amp;w=majority`</span></span><br></pre></td></tr></table></figure><p>It worked!</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c5041b62-b98d-4115-a755-ba9606400b3a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T091230Z&X-Amz-Expires=86400&X-Amz-Signature=25defad75497243bfa25deba111ff8de6bda2b23962c9d6e2e181f46f01aa63c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f0227db5-1ed5-400c-bcfb-2d1d487ac094/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T091249Z&X-Amz-Expires=86400&X-Amz-Signature=db34ce6b6a9d91aad32aee7de45eb9620827ca59f188c87b142a42294e3dc5f3&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p><strong><code>catch()</code> is not a must for this case</strong> </p><p>And I noticed the INDEXES TOTAL SIZE decreased to 4KB after I tried one more time. I’m not sure if it’s a bug because the collection still said the Index Size was 20KB.</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ff580822-5106-479f-91e0-15597216c708/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T091419Z&X-Amz-Expires=86400&X-Amz-Signature=6ad6fcc8f2407624d881e26461f0a9e32f1af110b65bb66591aae090861a0e92&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0c86c6ba-7e36-428d-b8fd-469b361105d3/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T091444Z&X-Amz-Expires=86400&X-Amz-Signature=493f089c803efb881a3c9631e459966bc88e3ffbcf414563d89d8a1c85c31a1c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p>Alright, it turned out to be a bug…</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;A review of connecting to mongodb&lt;/p&gt;
-&lt;p&gt;…&lt;/p&gt;
-&lt;p&gt;step 1: Create a new cluster&lt;/p&gt;
-&lt;p&gt;step 2: Select service + region&lt;/p&gt;
-&lt;p&gt;I tried to s</summary>
-      
-    
-    
-    
-    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
-    
-    
-    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
-    
-    <category term="Node.js" scheme="http://example.com/tags/Node-js/"/>
-    
-    <category term="MongoDB" scheme="http://example.com/tags/MongoDB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20210908 - Node (v14 above) isn&#39;t supported on win7</title>
-    <link href="http://example.com/2021/09/08/20210908%20-%20Node%20(v14%20above)%20isn&#39;t%20supported%20on%20win7/"/>
-    <id>http://example.com/2021/09/08/20210908%20-%20Node%20(v14%20above)%20isn&#39;t%20supported%20on%20win7/</id>
-    <published>2021-09-07T16:00:00.000Z</published>
-    <updated>2022-02-22T10:55:08.445Z</updated>
-    
-    <content type="html"><![CDATA[<p>Possible solution:</p><p><a href="https://github.com/nodejs/node/issues/33000">Node.js 14.x supported on windows 8.1 and above? · Issue #33000 · nodejs/node</a></p><p><a href="https://stackoverflow.com/questions/62212754/nodejs-for-windows-7">NodeJS for windows 7</a></p><p>How to set the NODE_SKIP_PLATFORM_CHECK environment variable to 1 which skips the version check</p><p><a href="https://stackoverflow.com/questions/67738844/how-to-set-the-node-skip-platform-check-environment-variable-to-1-which-skips-th">How to set the NODE_SKIP_PLATFORM_CHECK environment variable to 1 which skips the version check</a></p><p>How to uninstall node.js completely</p><p><a href="https://blog.csdn.net/lewky_liu/article/details/87959839">Windows下完全卸载node.js并安装node.js的多版本管理工具nvm-windows_不积跬步，无以至千里-CSDN博客_windows卸载node</a></p><h1 id="Just-a-short-conclusion"><a href="#Just-a-short-conclusion" class="headerlink" title="Just a short conclusion:"></a>Just a short conclusion:</h1><h3 id="First-let’s-review-how-to-upgrade-node-js"><a href="#First-let’s-review-how-to-upgrade-node-js" class="headerlink" title="First let’s review how to upgrade node.js"></a>First let’s review how to upgrade node.js</h3><p>step 1: uninstall existing node.js and delete relevant files (such as C:\Users{User}\AppData\Roaming\npm &amp; C:\Users{User}\AppData\Roaming\npm-cache), then restart the machine</p><p>step 2: download nvm-setup.zip from github</p><p>step 3: extract the zip and follow the commands below</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install SPECIFIC_VERSIOIN_YOU_WANT_TO_INSTALL</span><br></pre></td></tr></table></figure><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm use THE_VERSION_YOU_JUST_INSTALLED</span><br></pre></td></tr></table></figure><p>You can also check the versions you’ve installed with the command <code>nvm list</code> and enter <code>nvm list available</code> to see the versions available to download.</p><p>Technically done.</p><p>However, here comes up a problem that unfortunately <em><strong>v14+ of node.js isn’t supported by windows 7</strong></em>.</p><p>And you’ll get these words when <code>use</code> it:</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5ed82c78-54ea-45b7-903b-50917afe0ea6/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T083502Z&X-Amz-Expires=86400&X-Amz-Signature=bb2eac2294dc7e4a9e3775110413dbed2cc80ff5becde56dda94e1f3793988a0&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p>With the help of stackoverflow, I found the solution, here’s the original answer I pasted:</p><blockquote><p>Had same problem and ended solving it, I just installed node 14.15.0</p><ul><li>Go <a href="https://nodejs.org/en/download/">here</a></li><li>Download the <strong>Windows Binary (.zip)</strong> either 32/64 bit</li><li>Extract it in the directory where your node it’s installed and say yes to replace all files (remember that the zip comes with npm that is in <code>node_modules/npm</code> directory I didn’t copy from the zip because I already updated npm before replacing the files)</li><li>Create an Environment variable called: <code>[NODE_SKIP_PLATFORM_CHECK](https://nodejs.org/api/cli.html#cli_node_skip_platform_check_value)</code> and set it to 1</li><li>Ready to use node in Windows 7 for now</li></ul></blockquote><p>Here’s another answer on how to set NODE_SKIP_PLATFORM_CHECK to 1, I had to paste it here too:</p><blockquote><p>This work for me</p><ol><li>Go to System-Properties (run: systempropertiesadvanced.exe), in Advanced tab, click Environment Variables.</li><li>Still on the System variables, click ‘New’, add “NODE_PATH” with value “C:\nodejs64\node_modules”, and click OK.</li><li>click ‘New’ again, add “NODE_SKIP_PLATFORM_CHECK” with value “1”, and click OK.</li><li>Click OK of all dialogs close.</li><li>Restart your machine, so explore and cmd will get the fresh set of variables.</li></ol></blockquote><p>SO THANKS TO STACKOVERFLOW, FINALLY I INSTALLED THE LATEST VERSION OF NODE AND SUCCESSFULLY GET IT UP AND RUNNING ON WINDOWS 7! :-)</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Possible solution:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/nodejs/node/issues/33000&quot;&gt;Node.js 14.x supported on windows 8.1 and above? · Issue </summary>
-      
-    
-    
-    
-    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
-    
-    
-    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
-    
-    <category term="Node.js" scheme="http://example.com/tags/Node-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20210903 - Set Environment Variables &amp; Deal with missing dependencies</title>
-    <link href="http://example.com/2021/09/03/20210903%20-%20Set%20Environment%20Variables%20&amp;%20Deal%20with%20missing%20dependencies/"/>
-    <id>http://example.com/2021/09/03/20210903%20-%20Set%20Environment%20Variables%20&amp;%20Deal%20with%20missing%20dependencies/</id>
-    <published>2021-09-02T16:00:00.000Z</published>
-    <updated>2022-02-22T12:17:31.599Z</updated>
-    
-    <content type="html"><![CDATA[<p>Well, I’ve just known how to set environment variables.</p><ol><li>Create a .env (just the name ‘.env’ is fine) file in the root of your project</li><li>In the file, add this line: <code># env REACT_APP_API_KEY=[your_app_api_key]</code></li><li>Add <code>const api_key = process.env.REACT_APP_API_KEY</code> to where you need the key</li><li>Hide your key by adding ‘.env’ file into gitignore, so that file wont be pushed to github, once you do commit</li></ol><p>When every step was done, I did set the key and run the application successfully.</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5df19724-bbf4-4965-aa66-152060e4446d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T081853Z&X-Amz-Expires=86400&X-Amz-Signature=cc4535b622c68d02619b07ebe539863e16c9d4cf0ba7453896bc7738618c63b3&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p>But here’s another error I got. I can’t figure out what it means:</p><blockquote><p>react_devtools_backend.js:2850 src\components\Weather.js Line 22:6:  React Hook useEffect has missing dependencies: ‘api_key’ and ‘profile.capital’. Either include them or remove the dependency array  react-hooks/exhaustive-deps</p></blockquote><p>Actually I remember I got this error last time and solved it finally. But this time it’s weird, like, why it had to mention api_key here? And what’s this dependency array exactly???</p><p>Solutions from stackoverflow, but I haven’t tested yet.</p><p><a href="https://stackoverflow.com/questions/55840294/how-to-fix-missing-dependency-warning-when-using-useeffect-react-hook">How to fix missing dependency warning when using useEffect React Hook</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Well, I’ve just known how to set environment variables.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Create a .env (just the name ‘.env’ is fine) file in the root of you</summary>
-      
-    
-    
-    
-    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
-    
-    
-    <category term="React" scheme="http://example.com/tags/React/"/>
-    
-    <category term="Half-solved" scheme="http://example.com/tags/Half-solved/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20210902 - React Hook useEffect has a missing dependency &#39;countries&#39;.</title>
-    <link href="http://example.com/2021/09/02/20210902%20-%20React%20Hook%20useEffect%20has%20a%20missing%20dependency%20&#39;countries&#39;/"/>
-    <id>http://example.com/2021/09/02/20210902%20-%20React%20Hook%20useEffect%20has%20a%20missing%20dependency%20&#39;countries&#39;/</id>
-    <published>2021-09-01T16:00:00.000Z</published>
-    <updated>2022-02-22T11:19:39.691Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>webpackHotDevClient.js:138 src\App.js<br>Line 18:6:  React Hook useEffect has a missing dependency: ‘countries’. Either include it or remove the dependency array  react-hooks/exhaustive-deps</p></blockquote><p>App.js</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&quot;axios&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect&#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App = <span class="function">(<span class="params">&#123;countries&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [countries, setCountries] = useState([])</span><br><span class="line">  <span class="keyword">const</span> [search, setSearch] = useState(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">  useEffect(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;effect&#x27;</span>)</span><br><span class="line">    axios</span><br><span class="line">      .get(<span class="string">&#x27;https://restcountries.eu/rest/v2/all&#x27;</span>)</span><br><span class="line">      .then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;promise fulfilled&#x27;</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(response)</span><br><span class="line">        setCountries(response.data)</span><br><span class="line">        <span class="comment">// countries.push(response.data) // wrong! you should use setCountries</span></span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;, [])  <span class="comment">// If the second parameter is an empty array [], then the effect is only run along with the first render of the component. (It just renders the component only once like componentDidMount.)</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;render&#x27;</span>, countries.length, <span class="string">&#x27;countries&#x27;</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> handleSearchChange = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    setSearch(event.target.value)</span><br><span class="line">    <span class="comment">// console.log(search)</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> searchCountry = search</span><br><span class="line">    ? countries.filter(<span class="function"><span class="params">country</span> =&gt;</span> </span><br><span class="line">      country.name.toLowerCase().includes</span><br><span class="line">      (search.toLowerCase())</span><br><span class="line">    )</span><br><span class="line">    : []</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      find countries: <span class="xml"><span class="tag">&lt;<span class="name">input</span> </span></span></span><br><span class="line"><span class="xml">        value=&#123;search&#125; onChange=&#123;handleSearchChange&#125;</span></span><br><span class="line"><span class="xml">      /&gt;</span></span><br><span class="line">      &#123;searchCountry.map(<span class="function"><span class="params">country</span> =&gt;</span> </span><br><span class="line">        &lt;div key=&#123;country.name&#125;&gt;&#123;country.name&#125;&lt;/div&gt;  </span><br><span class="line">      )&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure><p>index.js</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> countries = []</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;App countries=&#123;countries&#125; /&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure><h1 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h1><h2 id="Don’t-directly-mutate-a-state-in-React"><a href="#Don’t-directly-mutate-a-state-in-React" class="headerlink" title="Don’t directly mutate a state in React"></a>Don’t directly mutate a state in React</h2><p>I attempted to replace <code>useState()</code> with <code>Array.push()</code>. But it didn’t work and instead threw these two errors:</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f6231cf3-4705-4fb9-8b59-6eee55dfd3e5/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T073017Z&X-Amz-Expires=86400&X-Amz-Signature=a5d542a62e17599eaf550c69b4caf9dc7b27294be76403f14d4b7909b62f99dd&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><p>For more details:</p><p><a href="https://stackoverflow.com/questions/37755997/why-cant-i-directly-modify-a-components-state-really">Why can’t I directly modify a component’s state, really?</a></p><h2 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect()"></a>useEffect()</h2><p>Because <code>useEffect</code> is run after the render of the component, where you can find this rule by the prints below:</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/364e79d0-9d3d-415f-a55c-c46ff15cc239/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220222/us-west-2/s3/aws4_request&X-Amz-Date=20220222T073050Z&X-Amz-Expires=86400&X-Amz-Signature=b72438e3b03ab9256e2ef017f1192bb61a8a9f6ff479a7e6dca31b068cad5ba9&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject" alt="Untitled"></p><blockquote><p>However, with <code>useState()</code>, it will re-render the component and its state countries will be updated to 250 elements and <strong>maintain what it have (re-renders caused by other states won’t affect its value due to the state is somewhat independent?)</strong>, and because we add the second parameter <code>[]</code> of <code>useEffect</code>,  now it is just run after the first render of the component.</p></blockquote><p>And here’s a good article introducing how <code>useEffect</code> and its parameters work.</p><p><a href="https://gosink.in/react-js-how-to-render-useeffect-only-once/">React.js - How to execute useEffect hook only once?</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;webpackHotDevClient.js:138 src\App.js&lt;br&gt;Line 18:6:  React Hook useEffect has a missing dependency: ‘countries’. Either incl</summary>
-      
-    
-    
-    
-    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
-    
-    
-    <category term="React" scheme="http://example.com/tags/React/"/>
-    
-    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
     
   </entry>
   
