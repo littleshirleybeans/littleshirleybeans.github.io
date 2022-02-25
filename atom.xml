@@ -488,35 +488,6 @@
   </entry>
   
   <entry>
-    <title>20211009 - multiple onClick() events</title>
-    <link href="http://example.com/2021/10/09/20211009%20-%20multiple%20onClick()%20events/"/>
-    <id>http://example.com/2021/10/09/20211009%20-%20multiple%20onClick()%20events/</id>
-    <published>2021-10-08T16:00:00.000Z</published>
-    <updated>2022-02-24T07:39:58.925Z</updated>
-    
-    <content type="html"><![CDATA[<p>This helped!!!</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/064d5a0e-3e38-4381-936e-eb6b0c947017/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T071626Z&X-Amz-Expires=86400&X-Amz-Signature=17ffe169c746258d313799cec5034661b5576632cdeef2a8f496014d267e195b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p><p><a href="https://stackoverflow.com/questions/26069238/call-multiple-functions-onclick-reactjs">Call multiple functions onClick ReactJS</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;This helped!!!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://s3.us-west-2.amazonaws.com/secure.notion-static.com/064d5a0e-3e38-4381-936e-eb6b0c947017/Untitled</summary>
-      
-    
-    
-    
-    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
-    
-    
-    <category term="React" scheme="http://example.com/tags/React/"/>
-    
-    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
-    
-    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>20211009 - onClick() event传参</title>
     <link href="http://example.com/2021/10/09/20211009%20-%20onClick()%20event%E4%BC%A0%E5%8F%82/"/>
     <id>http://example.com/2021/10/09/20211009%20-%20onClick()%20event%E4%BC%A0%E5%8F%82/</id>
@@ -546,6 +517,35 @@
     <category term="Arrow function" scheme="http://example.com/tags/Arrow-function/"/>
     
     <category term="Closure" scheme="http://example.com/tags/Closure/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20211009 - multiple onClick() events</title>
+    <link href="http://example.com/2021/10/09/20211009%20-%20multiple%20onClick()%20events/"/>
+    <id>http://example.com/2021/10/09/20211009%20-%20multiple%20onClick()%20events/</id>
+    <published>2021-10-08T16:00:00.000Z</published>
+    <updated>2022-02-24T07:39:58.925Z</updated>
+    
+    <content type="html"><![CDATA[<p>This helped!!!</p><p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/064d5a0e-3e38-4381-936e-eb6b0c947017/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45/20220224/us-west-2/s3/aws4_request&X-Amz-Date=20220224T071626Z&X-Amz-Expires=86400&X-Amz-Signature=17ffe169c746258d313799cec5034661b5576632cdeef2a8f496014d267e195b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20=%22Untitled.png%22&x-id=GetObject"></p><p><a href="https://stackoverflow.com/questions/26069238/call-multiple-functions-onclick-reactjs">Call multiple functions onClick ReactJS</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;This helped!!!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.us-west-2.amazonaws.com/secure.notion-static.com/064d5a0e-3e38-4381-936e-eb6b0c947017/Untitled</summary>
+      
+    
+    
+    
+    <category term="Front-end" scheme="http://example.com/categories/Front-end/"/>
+    
+    
+    <category term="React" scheme="http://example.com/tags/React/"/>
+    
+    <category term="Solved" scheme="http://example.com/tags/Solved/"/>
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
     
   </entry>
   
